@@ -13,6 +13,7 @@
 		80C4C0262B21ABB9006CE060 /* HomeAssignmentDarius.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C0242B21ABB9006CE060 /* HomeAssignmentDarius.xcdatamodeld */; };
 		80C4C0282B21ABBA006CE060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C4C0272B21ABBA006CE060 /* Assets.xcassets */; };
 		80C4C02B2B21ABBA006CE060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80C4C0292B21ABBA006CE060 /* LaunchScreen.storyboard */; };
+		80C4C05B2B21E62A006CE060 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C05A2B21E62A006CE060 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		80C4C0272B21ABBA006CE060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80C4C02A2B21ABBA006CE060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80C4C02C2B21ABBA006CE060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80C4C05A2B21E62A006CE060 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		80C4C01A2B21ABB9006CE060 /* HomeAssignmentDarius */ = {
 			isa = PBXGroup;
 			children = (
+				80C4C0322B21BC95006CE060 /* Model */,
+				80C4C0332B21BC9B006CE060 /* ViewModel */,
+				80C4C0342B21BCB0006CE060 /* View */,
 				80C4C01B2B21ABB9006CE060 /* AppDelegate.swift */,
 				80C4C01D2B21ABB9006CE060 /* SceneDelegate.swift */,
-				80C4C01F2B21ABB9006CE060 /* ViewController.swift */,
 				80C4C0272B21ABBA006CE060 /* Assets.xcassets */,
 				80C4C0292B21ABBA006CE060 /* LaunchScreen.storyboard */,
 				80C4C02C2B21ABBA006CE060 /* Info.plist */,
 				80C4C0242B21ABB9006CE060 /* HomeAssignmentDarius.xcdatamodeld */,
 			);
 			path = HomeAssignmentDarius;
+			sourceTree = "<group>";
+		};
+		80C4C0322B21BC95006CE060 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80C4C05C2B21E6AA006CE060 /* Network */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80C4C0332B21BC9B006CE060 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		80C4C0342B21BCB0006CE060 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80C4C01F2B21ABB9006CE060 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		80C4C05C2B21E6AA006CE060 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				80C4C05A2B21E62A006CE060 /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +174,7 @@
 			files = (
 				80C4C0202B21ABB9006CE060 /* ViewController.swift in Sources */,
 				80C4C0262B21ABB9006CE060 /* HomeAssignmentDarius.xcdatamodeld in Sources */,
+				80C4C05B2B21E62A006CE060 /* NetworkManager.swift in Sources */,
 				80C4C01C2B21ABB9006CE060 /* AppDelegate.swift in Sources */,
 				80C4C01E2B21ABB9006CE060 /* SceneDelegate.swift in Sources */,
 			);
