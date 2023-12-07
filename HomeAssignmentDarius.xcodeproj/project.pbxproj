@@ -16,6 +16,7 @@
 		80C4C05B2B21E62A006CE060 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C05A2B21E62A006CE060 /* NetworkManager.swift */; };
 		80C4C05E2B21E78D006CE060 /* PagoNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C05D2B21E78D006CE060 /* PagoNetworking.swift */; };
 		80C4C0602B21E94D006CE060 /* ContactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C05F2B21E94D006CE060 /* ContactData.swift */; };
+		80C4C0632B220DD2006CE060 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C0622B220DD2006CE060 /* ContactModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		80C4C05A2B21E62A006CE060 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		80C4C05D2B21E78D006CE060 /* PagoNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagoNetworking.swift; sourceTree = "<group>"; };
 		80C4C05F2B21E94D006CE060 /* ContactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactData.swift; sourceTree = "<group>"; };
+		80C4C0622B220DD2006CE060 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				80C4C05C2B21E6AA006CE060 /* Network */,
+				80C4C0612B220D33006CE060 /* CoreData */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,6 +109,14 @@
 				80C4C05F2B21E94D006CE060 /* ContactData.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		80C4C0612B220D33006CE060 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				80C4C0622B220DD2006CE060 /* ContactModel.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 			files = (
 				80C4C0202B21ABB9006CE060 /* ViewController.swift in Sources */,
 				80C4C0602B21E94D006CE060 /* ContactData.swift in Sources */,
+				80C4C0632B220DD2006CE060 /* ContactModel.swift in Sources */,
 				80C4C0262B21ABB9006CE060 /* HomeAssignmentDarius.xcdatamodeld in Sources */,
 				80C4C05B2B21E62A006CE060 /* NetworkManager.swift in Sources */,
 				80C4C01C2B21ABB9006CE060 /* AppDelegate.swift in Sources */,
