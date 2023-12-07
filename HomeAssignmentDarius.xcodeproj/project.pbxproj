@@ -62,11 +62,11 @@
 		80C4C01A2B21ABB9006CE060 /* HomeAssignmentDarius */ = {
 			isa = PBXGroup;
 			children = (
+				80C4C01B2B21ABB9006CE060 /* AppDelegate.swift */,
+				80C4C01D2B21ABB9006CE060 /* SceneDelegate.swift */,
 				80C4C0322B21BC95006CE060 /* Model */,
 				80C4C0332B21BC9B006CE060 /* ViewModel */,
 				80C4C0342B21BCB0006CE060 /* View */,
-				80C4C01B2B21ABB9006CE060 /* AppDelegate.swift */,
-				80C4C01D2B21ABB9006CE060 /* SceneDelegate.swift */,
 				80C4C0272B21ABBA006CE060 /* Assets.xcassets */,
 				80C4C0292B21ABBA006CE060 /* LaunchScreen.storyboard */,
 				80C4C02C2B21ABBA006CE060 /* Info.plist */,

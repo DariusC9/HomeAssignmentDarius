@@ -15,7 +15,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        cacheFilteredData()
+        
         return true
+    }
+    /// method used to cache filtered data
+    private func cacheFilteredData() {
+        Task {
+            do {
+                let contactData = try await fetchData()
+                /// filter contacts
+                /// save into core data the results
+            } catch {
+                print("Error during data fetching: \(error.localizedDescription)")
+            }
+        }
+    }
+    /// method used to fetch unfiltered data
+    private func fetchData() async throws -> [ContactData] {
+        let networkService = PagoNetworkService()
+        let apiHandler = PagoApiHandler<ContactData>(decoder: JSONDecoder())
+        let networkManager = NetworkManager<ContactData>(networkService: networkService, apiHandler: apiHandler)
+        
+        let contactData =  try await networkManager.fetchData()
+        print(contactData)
+        return contactData
+        
     }
 
     // MARK: UISceneSession Lifecycle
