@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// represents a local model for the core data entity 'Contact'
 struct ContactModel {
     
 }

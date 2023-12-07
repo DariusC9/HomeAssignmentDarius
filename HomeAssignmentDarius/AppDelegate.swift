@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Task {
             do {
                 let contactData = try await fetchData()
-                /// filter contacts
+                let filteredData = filterData(unfilteredData: contactData)
                 /// save into core data the results
             } catch {
                 print("Error during data fetching: \(error.localizedDescription)")
@@ -42,6 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(contactData)
         return contactData
         
+    }
+    
+    private func filterData(unfilteredData: [ContactData]) -> [ContactData] {
+        let contactFilter = ContactDataFilter(unfilteredData: unfilteredData)
+        let filteredData = contactFilter.filter()
+        print(filteredData)
+        return filteredData
     }
 
     // MARK: UISceneSession Lifecycle
