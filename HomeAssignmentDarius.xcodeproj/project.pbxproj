@@ -20,6 +20,7 @@
 		80C4C0652B220EF4006CE060 /* ContactDataFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C0642B220EF4006CE060 /* ContactDataFilter.swift */; };
 		80F451E52B22F9AC0005FFF4 /* ContactDataTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451E42B22F9AC0005FFF4 /* ContactDataTransformer.swift */; };
 		80F451E72B230C7E0005FFF4 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451E62B230C7E0005FFF4 /* CoreDataManager.swift */; };
+		80F451E92B2316390005FFF4 /* ProfileImageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451E82B2316390005FFF4 /* ProfileImageNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		80C4C0642B220EF4006CE060 /* ContactDataFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataFilter.swift; sourceTree = "<group>"; };
 		80F451E42B22F9AC0005FFF4 /* ContactDataTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataTransformer.swift; sourceTree = "<group>"; };
 		80F451E62B230C7E0005FFF4 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		80F451E82B2316390005FFF4 /* ProfileImageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				80C4C05A2B21E62A006CE060 /* NetworkManager.swift */,
 				80C4C05D2B21E78D006CE060 /* PagoNetworking.swift */,
+				80F451E82B2316390005FFF4 /* ProfileImageNetworkService.swift */,
 				80C4C05F2B21E94D006CE060 /* ContactData.swift */,
 				80C4C0642B220EF4006CE060 /* ContactDataFilter.swift */,
 				80F451E42B22F9AC0005FFF4 /* ContactDataTransformer.swift */,
@@ -202,6 +205,7 @@
 				80C4C0202B21ABB9006CE060 /* ViewController.swift in Sources */,
 				80C4C0602B21E94D006CE060 /* ContactData.swift in Sources */,
 				80C4C0652B220EF4006CE060 /* ContactDataFilter.swift in Sources */,
+				80F451E92B2316390005FFF4 /* ProfileImageNetworkService.swift in Sources */,
 				80C4C0632B220DD2006CE060 /* ContactModel.swift in Sources */,
 				80C4C0262B21ABB9006CE060 /* HomeAssignmentDarius.xcdatamodeld in Sources */,
 				80C4C05B2B21E62A006CE060 /* NetworkManager.swift in Sources */,
