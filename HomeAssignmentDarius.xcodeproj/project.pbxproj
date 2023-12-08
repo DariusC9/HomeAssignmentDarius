@@ -22,6 +22,7 @@
 		80F451E72B230C7E0005FFF4 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451E62B230C7E0005FFF4 /* CoreDataManager.swift */; };
 		80F451E92B2316390005FFF4 /* ProfileImageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451E82B2316390005FFF4 /* ProfileImageNetworkService.swift */; };
 		80F451EB2B234A450005FFF4 /* ContactModelTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451EA2B234A450005FFF4 /* ContactModelTransformer.swift */; };
+		80F451F02B23703A0005FFF4 /* UIColor extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451EF2B23703A0005FFF4 /* UIColor extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		80F451E62B230C7E0005FFF4 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		80F451E82B2316390005FFF4 /* ProfileImageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageNetworkService.swift; sourceTree = "<group>"; };
 		80F451EA2B234A450005FFF4 /* ContactModelTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModelTransformer.swift; sourceTree = "<group>"; };
+		80F451EF2B23703A0005FFF4 /* UIColor extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				80C4C05C2B21E6AA006CE060 /* Network */,
 				80C4C0612B220D33006CE060 /* CoreData */,
+				80F451EE2B236EB30005FFF4 /* Extensions */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,6 +135,14 @@
 				80F451EA2B234A450005FFF4 /* ContactModelTransformer.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		80F451EE2B236EB30005FFF4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80F451EF2B23703A0005FFF4 /* UIColor extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 				80C4C0652B220EF4006CE060 /* ContactDataFilter.swift in Sources */,
 				80F451E92B2316390005FFF4 /* ProfileImageNetworkService.swift in Sources */,
 				80C4C0632B220DD2006CE060 /* ContactModel.swift in Sources */,
+				80F451F02B23703A0005FFF4 /* UIColor extensions.swift in Sources */,
 				80C4C0262B21ABB9006CE060 /* HomeAssignmentDarius.xcdatamodeld in Sources */,
 				80C4C05B2B21E62A006CE060 /* NetworkManager.swift in Sources */,
 				80C4C01C2B21ABB9006CE060 /* AppDelegate.swift in Sources */,
