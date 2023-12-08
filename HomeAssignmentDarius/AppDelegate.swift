@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let filteredData = filterData(unfilteredData: contactData)
                 let contactModels = await transformToContactModelAsync(contactData: filteredData)
                 print(contactModels)
-                /// save contact model into Core Data 
+                saveContactModelIntoCoreData(contactModel: contactModels)
             } catch {
                 print("Error during data fetching: \(error.localizedDescription)")
             }
@@ -41,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let networkManager = NetworkManager<ContactData>(networkService: networkService, apiHandler: apiHandler)
         
         let contactData =  try await networkManager.fetchData()
-//        print(contactData)
         return contactData
         
     }
@@ -49,13 +48,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func filterData(unfilteredData: [ContactData]) -> [ContactData] {
         let contactFilter = ContactDataFilter(unfilteredData: unfilteredData)
         let filteredData = contactFilter.filter()
-//        print(filteredData)
         return filteredData
     }
     /// function used to transform contact data into contact model
     private func transformToContactModelAsync(contactData: [ContactData]) async -> [ContactModel] {
         let contactDataTransformer = ContactDataTransformer(data: contactData)
         return await contactDataTransformer.transformAsync()
+    }
+    /// function used to transform and save contact model into core data entity 'Contact'
+    private func saveContactModelIntoCoreData(contactModel: [ContactModel]) {
+        CoreDataManager.shared.saveContactModelsIntoCoreData(contactModels: contactModel)
     }
 
     // MARK: UISceneSession Lifecycle
