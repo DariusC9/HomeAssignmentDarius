@@ -25,7 +25,7 @@ class CoreDataManager {
         return container
     }()
     
-    private var mainContext: NSManagedObjectContext {
+    var mainContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
@@ -38,5 +38,11 @@ class CoreDataManager {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func saveContactModelsIntoCoreData(contactModels: [ContactModel]) {
+        let transformer = ContactModelTransformer()
+        let contactEntities = transformer.transformModelsIntoEntities(contactModels: contactModels)
+        save()
     }
 }
