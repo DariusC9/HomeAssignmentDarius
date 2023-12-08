@@ -16,9 +16,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ViewController()
+        let navigationController = setupNavigationController()
+        window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
+    }
+    
+    private func setupNavigationController() -> UINavigationController {
+        let mainVC = ViewController()
+        
+        let nav = UINavigationController(rootViewController: mainVC)
+        nav.navigationBar.prefersLargeTitles = true
+
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.white
+        appearance.largeTitleTextAttributes = [
+            .font: UIFont(name: "HelveticaNeue-Bold", size: 28) as Any,
+            .foregroundColor: UIColor.black
+        ]
+        nav.navigationBar.standardAppearance = appearance
+        nav.navigationBar.scrollEdgeAppearance = nav.navigationBar.standardAppearance
+
+        return nav
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
