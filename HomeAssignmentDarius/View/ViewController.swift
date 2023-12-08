@@ -8,12 +8,40 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let subtitleLabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.backgroundColor
+        
+        style()
+        layout()
+    }
+    
+    private func style() {
+        /// view controller
         self.title = "Contacte"
+        view.backgroundColor = UIColor.backgroundColor
+        
+        /// subtitleLabel
+        subtitleLabel.text = "CONTACTELE MELE"
+        subtitleLabel.textColor = UIColor.labelColor
+        subtitleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
+    }
+    
+    private func layout() {
+        /// add subviews
+        view.addSubview(subtitleLabel)
+        
+        /// translatesAutoresizingMaskIntoConstraints
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        /// constraints
+        NSLayoutConstraint.activate([
+            subtitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
+            subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 19)
+        ])
     }
 }
 
