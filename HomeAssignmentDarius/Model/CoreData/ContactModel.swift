@@ -21,7 +21,7 @@ struct ContactModel {
     let gender: String
     let status: ContactStatus
     let image: ContactImage
-    var profileImageData: Data?
+    let profileImageData: Data?
     
     init(contactData: ContactData) {
         self.id = contactData.id
@@ -35,5 +35,19 @@ struct ContactModel {
         } else {
             self.image = .picture
         }
+    }
+    
+    init(contactData: ContactData, data: Data?) {
+        self.id = contactData.id
+        self.name = contactData.name
+        self.email = contactData.email
+        self.gender = contactData.gender
+        self.status = contactData.status
+        if id % 2 == 0 {
+            self.image = .initials
+        } else {
+            self.image = .picture
+        }
+        self.profileImageData = data
     }
 }

@@ -7,26 +7,26 @@
 
 import Foundation
 
-/// class that will download the data for profile pictures
+enum NetworkError: Error {
+    case invalidURL
+    case requestFailed(Error)
+}
+
+/// Class that will download the data for profile pictures
 class ProfileImageNetworkService {
     let urlString = "https://picsum.photos/200/200"
     
-    func fetchImageData(completion: @escaping (Data?)-> Void) {
+    func fetchImageDataAsync() async throws -> Data {
         guard let url = URL(string: urlString) else {
-            completion(nil)
-            return 
-        }
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error {
-                print("Error downloading image: \(error)")
-                completion(nil)
-            } else if let data {
-                completion(data)
-            } else {
-                completion(nil)
-            }
+            throw NetworkError.invalidURL
         }
         
-        task.resume()
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            return data
+        } catch {
+            throw NetworkError.requestFailed(error)
+        }
     }
 }
+

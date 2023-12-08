@@ -26,36 +26,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 let contactData = try await fetchData()
                 let filteredData = filterData(unfilteredData: contactData)
-                let contactModelData = transformToContactModel(contactData: filteredData)
+                let contactModels = await transformToContactModelAsync(contactData: filteredData)
+                print(contactModels)
                 /// save contact model into Core Data 
             } catch {
                 print("Error during data fetching: \(error.localizedDescription)")
             }
         }
     }
-    /// method used to fetch unfiltered data
+    /// function used to fetch unfiltered data
     private func fetchData() async throws -> [ContactData] {
         let networkService = PagoNetworkService()
         let apiHandler = PagoApiHandler<ContactData>(decoder: JSONDecoder())
         let networkManager = NetworkManager<ContactData>(networkService: networkService, apiHandler: apiHandler)
         
         let contactData =  try await networkManager.fetchData()
-        print(contactData)
+//        print(contactData)
         return contactData
         
     }
-    /// method used to filter data 
+    /// function used to filter data
     private func filterData(unfilteredData: [ContactData]) -> [ContactData] {
         let contactFilter = ContactDataFilter(unfilteredData: unfilteredData)
         let filteredData = contactFilter.filter()
-        print(filteredData)
+//        print(filteredData)
         return filteredData
     }
-    /// method used to transform contact data into contact model
-    private func transformToContactModel(contactData: [ContactData]) -> [ContactModel] {
+    /// function used to transform contact data into contact model
+    private func transformToContactModelAsync(contactData: [ContactData]) async -> [ContactModel] {
         let contactDataTransformer = ContactDataTransformer(data: contactData)
-        let contactModel = contactDataTransformer.transform()
-        return contactModel
+        return await contactDataTransformer.transformAsync()
     }
 
     // MARK: UISceneSession Lifecycle
