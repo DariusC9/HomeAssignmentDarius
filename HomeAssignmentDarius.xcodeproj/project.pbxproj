@@ -23,6 +23,7 @@
 		80F451E92B2316390005FFF4 /* ProfileImageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451E82B2316390005FFF4 /* ProfileImageNetworkService.swift */; };
 		80F451EB2B234A450005FFF4 /* ContactModelTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451EA2B234A450005FFF4 /* ContactModelTransformer.swift */; };
 		80F451F02B23703A0005FFF4 /* UIColor extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451EF2B23703A0005FFF4 /* UIColor extensions.swift */; };
+		80F451F22B2379820005FFF4 /* UIFont extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451F12B2379820005FFF4 /* UIFont extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		80F451E82B2316390005FFF4 /* ProfileImageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageNetworkService.swift; sourceTree = "<group>"; };
 		80F451EA2B234A450005FFF4 /* ContactModelTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModelTransformer.swift; sourceTree = "<group>"; };
 		80F451EF2B23703A0005FFF4 /* UIColor extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor extensions.swift"; sourceTree = "<group>"; };
+		80F451F12B2379820005FFF4 /* UIFont extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				80F451EF2B23703A0005FFF4 /* UIColor extensions.swift */,
+				80F451F12B2379820005FFF4 /* UIFont extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				80F451E52B22F9AC0005FFF4 /* ContactDataTransformer.swift in Sources */,
 				80C4C0202B21ABB9006CE060 /* ViewController.swift in Sources */,
 				80C4C0602B21E94D006CE060 /* ContactData.swift in Sources */,
+				80F451F22B2379820005FFF4 /* UIFont extensions.swift in Sources */,
 				80C4C0652B220EF4006CE060 /* ContactDataFilter.swift in Sources */,
 				80F451E92B2316390005FFF4 /* ProfileImageNetworkService.swift in Sources */,
 				80C4C0632B220DD2006CE060 /* ContactModel.swift in Sources */,

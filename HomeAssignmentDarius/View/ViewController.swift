@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         /// subtitleLabel
         subtitleLabel.text = "CONTACTELE MELE"
         subtitleLabel.textColor = UIColor.labelColor
-        subtitleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
+        subtitleLabel.font = UIFont.labelFont
     }
     
     private func layout() {
