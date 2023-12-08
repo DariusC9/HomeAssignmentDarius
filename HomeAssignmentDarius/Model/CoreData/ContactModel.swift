@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// enum that represents the type of pictures of a contact model
 enum ContactImage {
     case initials
     case picture
