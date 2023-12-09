@@ -103,5 +103,9 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destinationVC = viewModel.createDestinationVC(using: indexPath.row)
+        show(destinationVC, sender: self)
+    }
 }
 
