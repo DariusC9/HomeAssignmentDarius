@@ -36,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 let filteredData = filterData(unfilteredData: contactData)
                 let contactModels = await transformToContactModelAsync(contactData: filteredData)
                 saveContactModelIntoCoreData(contactModel: contactModels)
-                let viewModel = ContactsViewModel(contacts: contactModels)
+                let viewModel = ContactsViewModel(contacts: CoreDataManager.shared.fetchContactModels())
                 completion(viewModel)
             } catch {
                 print("Error during data fetching: \(error.localizedDescription)")
