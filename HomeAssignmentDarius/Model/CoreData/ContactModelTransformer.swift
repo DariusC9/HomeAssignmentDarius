@@ -27,4 +27,25 @@ struct ContactModelTransformer {
         return contactEntities
     }
     
+    func transformEntityIntoModel(contactEntity: Contact) -> ContactModel {
+        
+        guard let name = contactEntity.name else {
+            return ContactModel(id: 0, name: "Error", email: "", gender: "", status: .active, image: .initials, profileImageData: nil)
+        }
+        
+        
+        let contactModel = ContactModel(id: Int(contactEntity.id),
+                                        name: name,
+                                        email: contactEntity.email ?? "",
+                                        gender: contactEntity.gender ?? "",
+                                        status: .active,
+                                        image: contactEntity.id % 2 == 0 ? .initials : .picture,
+                                        profileImageData: contactEntity.profileImage)
+        return contactModel
+    }
+    
+    func transformEntitiesIntoModels(contactEntities: [Contact]) -> [ContactModel] {
+        let contactModels = contactEntities.map { transformEntityIntoModel(contactEntity: $0) }
+        return contactModels
+    }
 }

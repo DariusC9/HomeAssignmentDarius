@@ -42,7 +42,26 @@ class CoreDataManager {
     
     func saveContactModelsIntoCoreData(contactModels: [ContactModel]) {
         let transformer = ContactModelTransformer()
-        let contactEntities = transformer.transformModelsIntoEntities(contactModels: contactModels)
+        _ = transformer.transformModelsIntoEntities(contactModels: contactModels)
         save()
+    }
+    
+    func fetchContactModels() -> [ContactModel] {
+        let contactEntities = fetchContacts()
+        let transformer = ContactModelTransformer()
+        let contactModels = transformer.transformEntitiesIntoModels(contactEntities: contactEntities)
+        return contactModels
+    }
+    
+    private func fetchContacts() -> [Contact] {
+        let fetchRequest: NSFetchRequest<Contact> = Contact.fetchRequest()
+
+        do {
+            let contacts = try mainContext.fetch(fetchRequest)
+            return contacts
+        } catch {
+            print("Error fetching contacts: \(error.localizedDescription)")
+            return []
+        }
     }
 }

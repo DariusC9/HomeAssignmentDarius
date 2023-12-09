@@ -50,4 +50,14 @@ struct ContactModel {
         }
         self.profileImageData = data
     }
+    
+    init(id: Int, name: String, email: String, gender: String, status: ContactStatus, image: ContactImage, profileImageData: Data?) {
+        self.id = id
+        self.name = name
+        self.email = email
+        self.gender = gender
+        self.status = status
+        self.image = image
+        self.profileImageData = profileImageData
+    }
 }
