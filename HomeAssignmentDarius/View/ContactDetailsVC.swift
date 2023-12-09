@@ -30,8 +30,8 @@ class ContactDetailsVC: UIViewController {
         self.viewModel = viewModel
         firstNameView = ContactDetailsView(title: "NUME", textFieldText: viewModel.contact.name)
         secondNameView = ContactDetailsView(title: "PRENUME", textFieldText: viewModel.contact.name)
-        telefonView = ContactDetailsView(title: "TELEFON", textFieldText: viewModel.contact.name)
-        emailView = ContactDetailsView(title: "EMAIL", textFieldText: viewModel.contact.name)
+        telefonView = ContactDetailsView(title: "TELEFON", textFieldText: viewModel.contact.phone ?? "")
+        emailView = ContactDetailsView(title: "EMAIL", textFieldText: viewModel.contact.email)
         super.init(nibName: nil, bundle: nil)
     }
     

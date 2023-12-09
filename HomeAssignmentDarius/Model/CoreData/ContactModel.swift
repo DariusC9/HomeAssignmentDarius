@@ -22,6 +22,7 @@ struct ContactModel {
     let status: ContactStatus
     let image: ContactImage
     let profileImageData: Data?
+    let phone: String?
     
     init(contactData: ContactData) {
         self.id = contactData.id
@@ -35,6 +36,7 @@ struct ContactModel {
         } else {
             self.image = .picture
         }
+        self.phone = ""
     }
     
     init(contactData: ContactData, data: Data?) {
@@ -49,9 +51,10 @@ struct ContactModel {
             self.image = .picture
         }
         self.profileImageData = data
+        self.phone = ""
     }
     
-    init(id: Int, name: String, email: String, gender: String, status: ContactStatus, image: ContactImage, profileImageData: Data?) {
+    init(id: Int, name: String, email: String, gender: String, status: ContactStatus, image: ContactImage, profileImageData: Data?, phone: String) {
         self.id = id
         self.name = name
         self.email = email
@@ -59,5 +62,6 @@ struct ContactModel {
         self.status = status
         self.image = image
         self.profileImageData = profileImageData
+        self.phone = phone
     }
 }

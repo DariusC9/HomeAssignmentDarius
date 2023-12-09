@@ -19,6 +19,7 @@ struct ContactModelTransformer {
         contactEntity.gender = contactModel.gender
         contactEntity.status = contactModel.status.rawValue
         contactEntity.profileImage = contactModel.profileImageData
+        contactEntity.phone = contactModel.phone
         return contactEntity
     }
     
@@ -30,7 +31,7 @@ struct ContactModelTransformer {
     func transformEntityIntoModel(contactEntity: Contact) -> ContactModel {
         
         guard let name = contactEntity.name else {
-            return ContactModel(id: 0, name: "Error", email: "", gender: "", status: .active, image: .initials, profileImageData: nil)
+            return ContactModel(id: 0, name: "Error", email: "", gender: "", status: .active, image: .initials, profileImageData: nil, phone: "")
         }
         
         
@@ -40,7 +41,8 @@ struct ContactModelTransformer {
                                         gender: contactEntity.gender ?? "",
                                         status: .active,
                                         image: contactEntity.id % 2 == 0 ? .initials : .picture,
-                                        profileImageData: contactEntity.profileImage)
+                                        profileImageData: contactEntity.profileImage,
+                                        phone: contactEntity.phone ?? "")
         return contactModel
     }
     
