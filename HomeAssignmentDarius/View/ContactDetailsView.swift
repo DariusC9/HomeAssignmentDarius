@@ -28,6 +28,12 @@ class ContactDetailsView: UIView {
         layout()
     }
     
+    convenience init(title: String, textFieldText: String, frame: CGRect = .zero) {
+        self.init(frame: frame)
+        titleLabel.text = title
+        textField.text = textFieldText
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         

@@ -9,6 +9,11 @@ import Foundation
 
 /// view model used to show details of a contact in ContactDetailsVC
 class ContactDetailsShowViewModel: ContactDetailsVMProtocol {
+    var contact: ContactModel
+    
+    init(contact: ContactModel) {
+        self.contact = contact
+    }
     
     func createTitle() -> String {
         return "Modifică contact"
@@ -18,6 +23,11 @@ class ContactDetailsShowViewModel: ContactDetailsVMProtocol {
 }
 /// view model used to add a new contact in ContactDetailsVC
 class ContactDetailsAddViewModel: ContactDetailsVMProtocol {
+    var contact: ContactModel
+    
+    init(contact: ContactModel) {
+        self.contact = contact
+    }
     
     func createTitle() -> String {
         return "Adaugă contact"

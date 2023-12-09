@@ -9,6 +9,8 @@ import UIKit
 
 protocol ContactDetailsVMProtocol {
     
+    var contact: ContactModel { get }
+    
     func createTitle() -> String
 }
 
@@ -16,16 +18,20 @@ protocol ContactDetailsVMProtocol {
 class ContactDetailsVC: UIViewController {
     
     let detailsStackView = UIStackView()
-    let firstNameView = ContactDetailsView()
-    let secondNameView = ContactDetailsView()
-    let telefonView = ContactDetailsView()
-    let emailView = ContactDetailsView()
+    let firstNameView: ContactDetailsView
+    let secondNameView: ContactDetailsView
+    let telefonView: ContactDetailsView
+    let emailView: ContactDetailsView
     let button = UIButton()
     
     let viewModel: ContactDetailsVMProtocol
     
     init(viewModel: ContactDetailsVMProtocol) {
         self.viewModel = viewModel
+        firstNameView = ContactDetailsView(title: "NUME", textFieldText: viewModel.contact.name)
+        secondNameView = ContactDetailsView(title: "PRENUME", textFieldText: viewModel.contact.name)
+        telefonView = ContactDetailsView(title: "TELEFON", textFieldText: viewModel.contact.name)
+        emailView = ContactDetailsView(title: "EMAIL", textFieldText: viewModel.contact.name)
         super.init(nibName: nil, bundle: nil)
     }
     
