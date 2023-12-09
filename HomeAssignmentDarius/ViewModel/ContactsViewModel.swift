@@ -16,9 +16,17 @@ class ContactsViewModel {
         self.contacts = contacts
     }
     
-    func createDestinationVC(using index: Int) -> UIViewController {
-        let viewModel = ContactDetailsShowViewModel(contact: contacts[index])
-        let destinationVC = ContactDetailsVC(viewModel: viewModel)
-        return destinationVC
+    func createDestinationVC(using index: Int?) -> UIViewController {
+        
+        if index == nil {
+            let model = ContactModel(id: 0, name: "", email: "", gender: "", status: .active, image: .initials, profileImageData: nil, phone: "")
+            let viewModel = ContactDetailsAddViewModel(contact: model)
+            let destinationVC = ContactDetailsVC(viewModel: viewModel)
+            return destinationVC
+        } else {
+            let viewModel = ContactDetailsShowViewModel(contact: contacts[index ?? 0])
+            let destinationVC = ContactDetailsVC(viewModel: viewModel)
+            return destinationVC
+        }
     }
 }

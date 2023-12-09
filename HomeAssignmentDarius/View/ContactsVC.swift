@@ -29,6 +29,11 @@ class ContactsVC: UIViewController {
         style()
         layout()
     }
+    
+    @objc func navigationButtonPressed() {
+        let destinationVC = viewModel.createDestinationVC(using: nil)
+        show(destinationVC, sender: self)
+    }
 }
 
 //MARK: - Setup view extension
@@ -39,6 +44,11 @@ extension ContactsVC {
         /// view controller
         self.title = "Contacte"
         view.backgroundColor = UIColor.backgroundColor
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.badge.plus"), style: .plain, target: self, action: #selector(navigationButtonPressed))
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "", style: .plain, target: nil, action: nil)
+//        self.navigationController?.navigationBar.tintColor = UIColor.white
+
         
         /// subtitleLabel
         subtitleLabel.text = "CONTACTELE MELE"
