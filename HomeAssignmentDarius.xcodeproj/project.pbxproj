@@ -23,6 +23,7 @@
 		80C8FEB52B245D8D00F84B9F /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C8FEB42B245D8D00F84B9F /* ContactsViewModel.swift */; };
 		80C8FEB72B246AE600F84B9F /* ContactDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C8FEB62B246AE600F84B9F /* ContactDetailsVC.swift */; };
 		80C8FEB92B24772D00F84B9F /* ContactDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C8FEB82B24772D00F84B9F /* ContactDetailsView.swift */; };
+		80C8FEBB2B24AEE100F84B9F /* ContactDetailsViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C8FEBA2B24AEE100F84B9F /* ContactDetailsViewModels.swift */; };
 		80F451E52B22F9AC0005FFF4 /* ContactDataTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451E42B22F9AC0005FFF4 /* ContactDataTransformer.swift */; };
 		80F451E72B230C7E0005FFF4 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451E62B230C7E0005FFF4 /* CoreDataManager.swift */; };
 		80F451E92B2316390005FFF4 /* ProfileImageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F451E82B2316390005FFF4 /* ProfileImageNetworkService.swift */; };
@@ -50,6 +51,7 @@
 		80C8FEB42B245D8D00F84B9F /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		80C8FEB62B246AE600F84B9F /* ContactDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsVC.swift; sourceTree = "<group>"; };
 		80C8FEB82B24772D00F84B9F /* ContactDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsView.swift; sourceTree = "<group>"; };
+		80C8FEBA2B24AEE100F84B9F /* ContactDetailsViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewModels.swift; sourceTree = "<group>"; };
 		80F451E42B22F9AC0005FFF4 /* ContactDataTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataTransformer.swift; sourceTree = "<group>"; };
 		80F451E62B230C7E0005FFF4 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		80F451E82B2316390005FFF4 /* ProfileImageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageNetworkService.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				80C8FEB42B245D8D00F84B9F /* ContactsViewModel.swift */,
 				80C8FEB22B245B4500F84B9F /* ContactCellViewModel.swift */,
+				80C8FEBA2B24AEE100F84B9F /* ContactDetailsViewModels.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				80C4C0652B220EF4006CE060 /* ContactDataFilter.swift in Sources */,
 				80F451E92B2316390005FFF4 /* ProfileImageNetworkService.swift in Sources */,
 				80C4C0632B220DD2006CE060 /* ContactModel.swift in Sources */,
+				80C8FEBB2B24AEE100F84B9F /* ContactDetailsViewModels.swift in Sources */,
 				80C8FEB72B246AE600F84B9F /* ContactDetailsVC.swift in Sources */,
 				80C8FEB52B245D8D00F84B9F /* ContactsViewModel.swift in Sources */,
 				80F451F02B23703A0005FFF4 /* UIColor extensions.swift in Sources */,

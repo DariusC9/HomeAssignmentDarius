@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ContactDetailsVMProtocol {
+    
+    func createTitle() -> String
+}
+
 /// view controller used to display the details of a contact or to add a new contact
 class ContactDetailsVC: UIViewController {
     
@@ -16,7 +21,18 @@ class ContactDetailsVC: UIViewController {
     let telefonView = ContactDetailsView()
     let emailView = ContactDetailsView()
     let button = UIButton()
-
+    
+    let viewModel: ContactDetailsVMProtocol
+    
+    init(viewModel: ContactDetailsVMProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +51,7 @@ extension ContactDetailsVC {
     
     private func style() {
         /// view controller
-        self.title = "Adauga contact"
+        self.title = viewModel.createTitle()
         view.backgroundColor = UIColor.backgroundColor
         
         /// collectionView
