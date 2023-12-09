@@ -13,4 +13,8 @@ extension UIFont {
         return UIFont(name: "HelveticaNeue-Medium", size: 15) ?? UIFont.systemFont(ofSize: 15)
     }
     
+    static var contactCellFont: UIFont {
+        return UIFont.systemFont(ofSize: 19)
+    }
+    
 }
