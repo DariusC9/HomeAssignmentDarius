@@ -44,10 +44,13 @@ extension ContactsVC {
         /// view controller
         self.title = "Contacte"
         view.backgroundColor = UIColor.backgroundColor
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.badge.plus"), style: .plain, target: self, action: #selector(navigationButtonPressed))
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        let addButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.badge.plus"), style: .plain, target: self, action: #selector(navigationButtonPressed))
+        addButton.tintColor = UIColor.labelColor
+        self.navigationItem.rightBarButtonItem = addButton
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title: "", style: .plain, target: nil, action: nil)
-//        self.navigationController?.navigationBar.tintColor = UIColor.white
+
 
         
         /// subtitleLabel
