@@ -16,48 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        cacheFilteredData()
         
         return true
-    }
-    /// method used to cache filtered data
-    private func cacheFilteredData() {
-        Task {
-            do {
-                let contactData = try await fetchData()
-                let filteredData = filterData(unfilteredData: contactData)
-                let contactModels = await transformToContactModelAsync(contactData: filteredData)
-                print(contactModels)
-                saveContactModelIntoCoreData(contactModel: contactModels)
-            } catch {
-                print("Error during data fetching: \(error.localizedDescription)")
-            }
-        }
-    }
-    /// function used to fetch unfiltered data
-    private func fetchData() async throws -> [ContactData] {
-        let networkService = PagoNetworkService()
-        let apiHandler = PagoApiHandler<ContactData>(decoder: JSONDecoder())
-        let networkManager = NetworkManager<ContactData>(networkService: networkService, apiHandler: apiHandler)
-        
-        let contactData =  try await networkManager.fetchData()
-        return contactData
-        
-    }
-    /// function used to filter data
-    private func filterData(unfilteredData: [ContactData]) -> [ContactData] {
-        let contactFilter = ContactDataFilter(unfilteredData: unfilteredData)
-        let filteredData = contactFilter.filter()
-        return filteredData
-    }
-    /// function used to transform contact data into contact model
-    private func transformToContactModelAsync(contactData: [ContactData]) async -> [ContactModel] {
-        let contactDataTransformer = ContactDataTransformer(data: contactData)
-        return await contactDataTransformer.transformAsync()
-    }
-    /// function used to transform and save contact model into core data entity 'Contact'
-    private func saveContactModelIntoCoreData(contactModel: [ContactModel]) {
-        CoreDataManager.shared.saveContactModelsIntoCoreData(contactModels: contactModel)
     }
 
     // MARK: UISceneSession Lifecycle

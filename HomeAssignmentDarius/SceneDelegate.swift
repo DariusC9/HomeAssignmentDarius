@@ -14,18 +14,66 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let navigationController = setupNavigationController()
         window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
+        
+        cacheFilteredData { viewModel in
+            let mainvc = self.setupMainViewController(with: viewModel)
+            navigationController.pushViewController(mainvc, animated: true)
+        }
     }
     
-    private func setupNavigationController() -> UINavigationController {
-        let mainVC = ViewController()
+    /// method used to cache filtered data
+    private func cacheFilteredData(completion: @escaping (ContactsViewModel) -> Void ) {
+        Task {
+            do {
+                let contactData = try await fetchData()
+                let filteredData = filterData(unfilteredData: contactData)
+                let contactModels = await transformToContactModelAsync(contactData: filteredData)
+                saveContactModelIntoCoreData(contactModel: contactModels)
+                let viewModel = ContactsViewModel(contacts: contactModels)
+                completion(viewModel)
+            } catch {
+                print("Error during data fetching: \(error.localizedDescription)")
+                let viewModel = ContactsViewModel(contacts: [])
+                completion(viewModel)
+            }
+        }
+    }
+    /// function used to fetch unfiltered data
+    private func fetchData() async throws -> [ContactData] {
+        let networkService = PagoNetworkService()
+        let apiHandler = PagoApiHandler<ContactData>(decoder: JSONDecoder())
+        let networkManager = NetworkManager<ContactData>(networkService: networkService, apiHandler: apiHandler)
         
-        let nav = UINavigationController(rootViewController: mainVC)
+        let contactData =  try await networkManager.fetchData()
+        return contactData
+        
+    }
+    /// function used to filter data
+    private func filterData(unfilteredData: [ContactData]) -> [ContactData] {
+        let contactFilter = ContactDataFilter(unfilteredData: unfilteredData)
+        let filteredData = contactFilter.filter()
+        return filteredData
+    }
+    /// function used to transform contact data into contact model
+    private func transformToContactModelAsync(contactData: [ContactData]) async -> [ContactModel] {
+        let contactDataTransformer = ContactDataTransformer(data: contactData)
+        return await contactDataTransformer.transformAsync()
+    }
+    /// function used to transform and save contact model into core data entity 'Contact'
+    private func saveContactModelIntoCoreData(contactModel: [ContactModel]) {
+        CoreDataManager.shared.saveContactModelsIntoCoreData(contactModels: contactModel)
+    }
+    
+    /// function used to setup navigation controller 
+    private func setupNavigationController() -> UINavigationController {
+        let nav = UINavigationController()
         nav.navigationBar.prefersLargeTitles = true
 
         let appearance = UINavigationBarAppearance()
@@ -39,6 +87,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         nav.navigationBar.scrollEdgeAppearance = nav.navigationBar.standardAppearance
 
         return nav
+    }
+    /// function used to setup main view controller
+    private func setupMainViewController(with viewModel: ContactsViewModel) -> ViewController {
+        let mainVC = ViewController(viewModel: viewModel)
+        return mainVC
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
