@@ -11,13 +11,18 @@ class ViewController: UIViewController {
     
     let subtitleLabel = UILabel()
     let tableView = UITableView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         style()
         layout()
     }
+}
+
+//MARK: - Setup view extension
+
+extension ViewController {
     
     private func style() {
         /// view controller
@@ -28,8 +33,13 @@ class ViewController: UIViewController {
         subtitleLabel.text = "CONTACTELE MELE"
         subtitleLabel.textColor = UIColor.labelColor
         subtitleLabel.font = UIFont.labelFont
+        
         /// tableView
         tableView.backgroundColor = UIColor.white
+        tableView.register(ContactCell.self, forCellReuseIdentifier: ContactCell.identifier)
+        tableView.rowHeight = 100
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     private func layout() {
@@ -55,5 +65,31 @@ class ViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
         ])
     }
+}
+
+//MARK: - UITableViewDelegate and UITableViewDataSource extensions
+
+extension ViewController: UITableViewDelegate {
+    
+}
+
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.identifier) as? ContactCell else {
+            let cell = UITableViewCell()
+            var content = cell.defaultContentConfiguration()
+            content.text = "There is an error"
+            cell.contentConfiguration = content
+            return cell
+        }
+
+        return cell
+    }
+    
 }
 
