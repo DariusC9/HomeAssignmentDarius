@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		80C4C01C2B21ABB9006CE060 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C01B2B21ABB9006CE060 /* AppDelegate.swift */; };
 		80C4C01E2B21ABB9006CE060 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C01D2B21ABB9006CE060 /* SceneDelegate.swift */; };
-		80C4C0202B21ABB9006CE060 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C01F2B21ABB9006CE060 /* ViewController.swift */; };
+		80C4C0202B21ABB9006CE060 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C01F2B21ABB9006CE060 /* ContactsVC.swift */; };
 		80C4C0262B21ABB9006CE060 /* HomeAssignmentDarius.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C0242B21ABB9006CE060 /* HomeAssignmentDarius.xcdatamodeld */; };
 		80C4C0282B21ABBA006CE060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C4C0272B21ABBA006CE060 /* Assets.xcassets */; };
 		80C4C02B2B21ABBA006CE060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80C4C0292B21ABBA006CE060 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 		80C4C0182B21ABB9006CE060 /* HomeAssignmentDarius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAssignmentDarius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C4C01B2B21ABB9006CE060 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80C4C01D2B21ABB9006CE060 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80C4C01F2B21ABB9006CE060 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80C4C01F2B21ABB9006CE060 /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
 		80C4C0252B21ABB9006CE060 /* HomeAssignmentDarius.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeAssignmentDarius.xcdatamodel; sourceTree = "<group>"; };
 		80C4C0272B21ABBA006CE060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80C4C02A2B21ABBA006CE060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		80C4C0342B21BCB0006CE060 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				80C4C01F2B21ABB9006CE060 /* ViewController.swift */,
+				80C4C01F2B21ABB9006CE060 /* ContactsVC.swift */,
 				80C8FEB62B246AE600F84B9F /* ContactDetailsVC.swift */,
 				80C8FEB02B244A7500F84B9F /* ContactCell.swift */,
 				80C8FEB82B24772D00F84B9F /* ContactDetailsView.swift */,
@@ -238,7 +238,7 @@
 			files = (
 				80C8FEB92B24772D00F84B9F /* ContactDetailsView.swift in Sources */,
 				80F451E52B22F9AC0005FFF4 /* ContactDataTransformer.swift in Sources */,
-				80C4C0202B21ABB9006CE060 /* ViewController.swift in Sources */,
+				80C4C0202B21ABB9006CE060 /* ContactsVC.swift in Sources */,
 				80C4C0602B21E94D006CE060 /* ContactData.swift in Sources */,
 				80F451F22B2379820005FFF4 /* UIFont extensions.swift in Sources */,
 				80C4C0652B220EF4006CE060 /* ContactDataFilter.swift in Sources */,

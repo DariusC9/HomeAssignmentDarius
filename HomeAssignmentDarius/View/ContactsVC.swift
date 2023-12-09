@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ContactsVC: UIViewController {
     
     let subtitleLabel = UILabel()
     let tableView = UITableView()
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 
 //MARK: - Setup view extension
 
-extension ViewController {
+extension ContactsVC {
     
     private func style() {
         /// view controller
@@ -80,11 +80,11 @@ extension ViewController {
 
 //MARK: - UITableViewDelegate and UITableViewDataSource extensions
 
-extension ViewController: UITableViewDelegate {
+extension ContactsVC: UITableViewDelegate {
     
 }
 
-extension ViewController: UITableViewDataSource {
+extension ContactsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(viewModel.contacts.count)

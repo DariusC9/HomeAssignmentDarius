@@ -89,8 +89,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return nav
     }
     /// function used to setup main view controller
-    private func setupMainViewController(with viewModel: ContactsViewModel) -> ViewController {
-        let mainVC = ViewController(viewModel: viewModel)
+    private func setupMainViewController(with viewModel: ContactsViewModel) -> ContactsVC {
+        let mainVC = ContactsVC(viewModel: viewModel)
         return mainVC
     }
 
