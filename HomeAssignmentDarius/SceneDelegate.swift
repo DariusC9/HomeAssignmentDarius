@@ -11,9 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
@@ -29,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     /// method used to cache filtered data
-    private func cacheFilteredData(completion: @escaping (ContactsViewModel) -> Void ) {
+    private func cacheFilteredData(completion: @escaping (ContactsViewModel) -> Void) {
         Task {
             do {
                 let contactData = try await fetchData()

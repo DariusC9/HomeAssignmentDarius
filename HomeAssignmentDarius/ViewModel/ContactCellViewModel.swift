@@ -19,16 +19,24 @@ class ContactCellViewModel {
         return contactModel.name
     }
     
-    func setProfileImage() -> UIImage? {
-        
+    func showProfileImage() -> Bool {
         switch contactModel.image {
         case .initials:
-            return UIImage(named: "profileImage")
+            return false
         case .picture:
-            guard let data = contactModel.profileImageData else {
-                return UIImage(named: "profileImage")
-            }
-            return UIImage(data: data)
+            return true
         }
+    }
+    
+    func setProfileImage() -> UIImage? {
+        guard let data = contactModel.profileImageData else {
+            return UIImage(named: "profileImage")
+        }
+        
+        return UIImage(data: data)
+    }
+    
+    func setInitialsText() -> String {
+        return self.contactModel.name.getInitials()
     }
 }

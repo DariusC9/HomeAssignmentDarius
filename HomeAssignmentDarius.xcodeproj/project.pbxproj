@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80A34D5B2B259F52004DBB99 /* InitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A34D5A2B259F52004DBB99 /* InitialsView.swift */; };
+		80A34D5D2B25B0B4004DBB99 /* String extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A34D5C2B25B0B4004DBB99 /* String extensions.swift */; };
 		80C4C01C2B21ABB9006CE060 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C01B2B21ABB9006CE060 /* AppDelegate.swift */; };
 		80C4C01E2B21ABB9006CE060 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C01D2B21ABB9006CE060 /* SceneDelegate.swift */; };
 		80C4C0202B21ABB9006CE060 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C01F2B21ABB9006CE060 /* ContactsVC.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80A34D5A2B259F52004DBB99 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
+		80A34D5C2B25B0B4004DBB99 /* String extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String extensions.swift"; sourceTree = "<group>"; };
 		80C4C0182B21ABB9006CE060 /* HomeAssignmentDarius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAssignmentDarius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C4C01B2B21ABB9006CE060 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80C4C01D2B21ABB9006CE060 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				80C8FEB62B246AE600F84B9F /* ContactDetailsVC.swift */,
 				80C8FEB02B244A7500F84B9F /* ContactCell.swift */,
 				80C8FEB82B24772D00F84B9F /* ContactDetailsView.swift */,
+				80A34D5A2B259F52004DBB99 /* InitialsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			children = (
 				80F451EF2B23703A0005FFF4 /* UIColor extensions.swift */,
 				80F451F12B2379820005FFF4 /* UIFont extensions.swift */,
+				80A34D5C2B25B0B4004DBB99 /* String extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,7 +244,9 @@
 			files = (
 				80C8FEB92B24772D00F84B9F /* ContactDetailsView.swift in Sources */,
 				80F451E52B22F9AC0005FFF4 /* ContactDataTransformer.swift in Sources */,
+				80A34D5D2B25B0B4004DBB99 /* String extensions.swift in Sources */,
 				80C4C0202B21ABB9006CE060 /* ContactsVC.swift in Sources */,
+				80A34D5B2B259F52004DBB99 /* InitialsView.swift in Sources */,
 				80C4C0602B21E94D006CE060 /* ContactData.swift in Sources */,
 				80F451F22B2379820005FFF4 /* UIFont extensions.swift in Sources */,
 				80C4C0652B220EF4006CE060 /* ContactDataFilter.swift in Sources */,
