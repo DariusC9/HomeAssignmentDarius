@@ -30,6 +30,7 @@ class ContactCellViewModel {
     
     func setProfileImage() -> UIImage? {
         guard let data = contactModel.profileImageData else {
+            print("it goes here")
             return UIImage(named: "profileImage")
         }
         

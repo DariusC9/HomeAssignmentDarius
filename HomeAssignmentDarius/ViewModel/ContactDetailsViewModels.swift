@@ -38,6 +38,7 @@ class ContactDetailsAddViewModel: ContactDetailsVMProtocol {
     }
     
     func saveItem(firstName: String, lastName: String, telephone: String?, email: String?) {
-        print("")
+        contact.updateContactModel(name: "\(firstName) \(lastName)", phone: telephone, email: email)
+        CoreDataManager.shared.saveContactModelIntoCoreData(contactModel: contact)
     }
 }

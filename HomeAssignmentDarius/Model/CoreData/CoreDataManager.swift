@@ -40,6 +40,12 @@ class CoreDataManager {
         }
     }
     
+    func saveContactModelIntoCoreData(contactModel: ContactModel) {
+        let transformer = ContactModelTransformer()
+        _ = transformer.transformModelIntoEntity(contactModel: contactModel)
+        save()
+    }
+    
     func saveContactModelsIntoCoreData(contactModels: [ContactModel]) {
         let transformer = ContactModelTransformer()
         _ = transformer.transformModelsIntoEntities(contactModels: contactModels)

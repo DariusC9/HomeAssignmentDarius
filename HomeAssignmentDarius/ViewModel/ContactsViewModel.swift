@@ -11,6 +11,8 @@ import UIKit
 class ContactsViewModel {
     
     private(set) var contacts: [ContactModel]
+    private var data: Data? = nil
+    private var image: ContactImage = .initials
     
     init(contacts: [ContactModel]) {
         self.contacts = contacts
@@ -19,7 +21,20 @@ class ContactsViewModel {
     func createDestinationVC(using index: Int?) -> ContactDetailsVC {
         
         if index == nil {
-            let model = ContactModel(id: 0, name: "", email: "", gender: "", status: .active, image: .initials, profileImageData: nil, phone: "")
+            let id = Generator.generateRandomNumber()
+            if id % 2 != 0 {
+                let profileNetwork = ProfileImageNetworkService()
+                Task {
+                    do {
+                        data = try? await profileNetwork.fetchImageDataAsync()
+                        image = .picture
+                    }
+                }
+            } else {
+                data = nil
+                image = .initials
+            }
+            let model = ContactModel(id: id, name: "", email: "", gender: "", status: .active, image: image, profileImageData: data, phone: "")
             let viewModel = ContactDetailsAddViewModel(contact: model)
             let destinationVC = ContactDetailsVC(viewModel: viewModel)
             return destinationVC
