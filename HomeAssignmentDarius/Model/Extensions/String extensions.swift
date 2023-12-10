@@ -35,4 +35,36 @@ extension String {
             return ""
         }
     }
+    
+    func formatPhoneNumber() -> String {
+        let cleanPhoneNumber = self.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        
+        var formattedNumber = ""
+        
+        var index = cleanPhoneNumber.startIndex
+        
+        for _ in 0..<4 {
+            guard index < cleanPhoneNumber.endIndex else { break }
+            formattedNumber.append(cleanPhoneNumber[index])
+            index = cleanPhoneNumber.index(after: index)
+        }
+        
+        formattedNumber += " "
+        
+        for _ in 0..<3 {
+            guard index < cleanPhoneNumber.endIndex else { break }
+            formattedNumber.append(cleanPhoneNumber[index])
+            index = cleanPhoneNumber.index(after: index)
+        }
+        
+        formattedNumber += " "
+        
+        for _ in 0..<3 {
+            guard index < cleanPhoneNumber.endIndex else { break }
+            formattedNumber.append(cleanPhoneNumber[index])
+            index = cleanPhoneNumber.index(after: index)
+        }
+        
+        return formattedNumber
+    }
 }

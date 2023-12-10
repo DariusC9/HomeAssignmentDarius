@@ -20,7 +20,7 @@ class ContactDetailsShowViewModel: ContactDetailsVMProtocol {
     }
     
     func saveItem(firstName: String, lastName: String, telephone: String?, email: String?) {
-        contact.updateContactModel(name: "\(firstName) \(lastName)", phone: telephone, email: email)
+        contact.updateContactModel(name: "\(firstName) \(lastName)", phone: telephone?.formatPhoneNumber(), email: email)
         CoreDataManager.shared.updateContact(with: contact)
     }
     
@@ -42,7 +42,7 @@ class ContactDetailsAddViewModel: ContactDetailsVMProtocol {
     }
     
     func saveItem(firstName: String, lastName: String, telephone: String?, email: String?) {
-        contact.updateContactModel(name: "\(firstName) \(lastName)", phone: telephone, email: email)
+        contact.updateContactModel(name: "\(firstName) \(lastName)", phone: telephone?.formatPhoneNumber(), email: email)
         CoreDataManager.shared.saveContactModelIntoCoreData(contactModel: contact)
     }
     
