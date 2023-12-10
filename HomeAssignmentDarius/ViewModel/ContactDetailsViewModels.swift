@@ -23,6 +23,10 @@ class ContactDetailsShowViewModel: ContactDetailsVMProtocol {
         contact.updateContactModel(name: "\(firstName) \(lastName)", phone: telephone, email: email)
         CoreDataManager.shared.updateContact(with: contact)
     }
+    
+    func setButtonTitle() -> String {
+        return "Update"
+    }
 }
 
 /// view model used to add a new contact in ContactDetailsVC
@@ -40,5 +44,9 @@ class ContactDetailsAddViewModel: ContactDetailsVMProtocol {
     func saveItem(firstName: String, lastName: String, telephone: String?, email: String?) {
         contact.updateContactModel(name: "\(firstName) \(lastName)", phone: telephone, email: email)
         CoreDataManager.shared.saveContactModelIntoCoreData(contactModel: contact)
+    }
+    
+    func setButtonTitle() -> String {
+        return "Save"
     }
 }

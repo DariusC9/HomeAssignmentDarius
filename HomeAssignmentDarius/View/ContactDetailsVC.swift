@@ -14,6 +14,8 @@ protocol ContactDetailsVMProtocol {
     func createTitle() -> String
     
     func saveItem(firstName: String, lastName: String, telephone: String?, email: String?)
+    
+    func setButtonTitle() -> String
 }
 
 protocol ContactDetailsDelegate: AnyObject {
@@ -96,7 +98,7 @@ extension ContactDetailsVC {
         detailsStackView.axis = .vertical
         
         /// button
-        button.setTitle("Salveaza", for: .normal)
+        button.setTitle(viewModel.setButtonTitle(), for: .normal)
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.backgroundColor = UIColor(red: 68/255, green: 200/255, blue: 77/255, alpha: 1.0)
         button.layer.cornerRadius = 15
