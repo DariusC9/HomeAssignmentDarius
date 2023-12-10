@@ -16,6 +16,10 @@ protocol ContactDetailsVMProtocol {
     func saveItem(firstName: String, lastName: String, telephone: String?, email: String?)
 }
 
+protocol ContactDetailsDelegate: AnyObject {
+    func update()
+}
+
 /// view controller used to display the details of a contact or to add a new contact
 class ContactDetailsVC: UIViewController {
     
@@ -27,6 +31,7 @@ class ContactDetailsVC: UIViewController {
     let button = UIButton()
     
     let viewModel: ContactDetailsVMProtocol
+    weak var delegate: ContactDetailsDelegate?
     
     init(viewModel: ContactDetailsVMProtocol) {
         self.viewModel = viewModel
@@ -71,7 +76,7 @@ class ContactDetailsVC: UIViewController {
                            lastName: secondName,
                            telephone: telefonView.textField.text,
                            email: emailView.textField.text)
-        
+        delegate?.update()
         self.navigationController?.popViewController(animated: true)
     }
 }

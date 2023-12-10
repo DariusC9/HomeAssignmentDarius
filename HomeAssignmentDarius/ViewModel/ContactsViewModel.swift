@@ -16,7 +16,7 @@ class ContactsViewModel {
         self.contacts = contacts
     }
     
-    func createDestinationVC(using index: Int?) -> UIViewController {
+    func createDestinationVC(using index: Int?) -> ContactDetailsVC {
         
         if index == nil {
             let model = ContactModel(id: 0, name: "", email: "", gender: "", status: .active, image: .initials, profileImageData: nil, phone: "")
@@ -28,5 +28,11 @@ class ContactsViewModel {
             let destinationVC = ContactDetailsVC(viewModel: viewModel)
             return destinationVC
         }
+    }
+    
+    func updateContacts() {
+        contacts = []
+        let newContacts = CoreDataManager.shared.fetchContactModels()
+        contacts = newContacts
     }
 }

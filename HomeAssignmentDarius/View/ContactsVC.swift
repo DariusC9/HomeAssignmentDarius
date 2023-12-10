@@ -32,6 +32,7 @@ class ContactsVC: UIViewController {
     
     @objc func navigationButtonPressed() {
         let destinationVC = viewModel.createDestinationVC(using: nil)
+        destinationVC.delegate = self
         show(destinationVC, sender: self)
     }
 }
@@ -120,7 +121,15 @@ extension ContactsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destinationVC = viewModel.createDestinationVC(using: indexPath.row)
+        destinationVC.delegate = self
         show(destinationVC, sender: self)
+    }
+}
+
+extension ContactsVC: ContactDetailsDelegate {
+    func update() {
+        viewModel.updateContacts()
+        tableView.reloadData()
     }
 }
 
