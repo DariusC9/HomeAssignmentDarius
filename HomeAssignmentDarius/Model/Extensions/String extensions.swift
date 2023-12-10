@@ -32,7 +32,7 @@ extension String {
             let lastNameComponents = Array(components.suffix(from: 1))
             return lastNameComponents.joined(separator: " ")
         } else {
-            return self
+            return ""
         }
     }
 }

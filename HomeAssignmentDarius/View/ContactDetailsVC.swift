@@ -33,7 +33,7 @@ class ContactDetailsVC: UIViewController {
         firstNameView = ContactDetailsView(title: "NUME", textFieldText: viewModel.contact.name.getFirstName())
         secondNameView = ContactDetailsView(title: "PRENUME", textFieldText: viewModel.contact.name.getLastName())
         telefonView = ContactDetailsView(title: "TELEFON", textFieldText: viewModel.contact.phone ?? "")
-        emailView = ContactDetailsView(title: "EMAIL", textFieldText: viewModel.contact.email)
+        emailView = ContactDetailsView(title: "EMAIL", textFieldText: viewModel.contact.email ?? "")
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -46,6 +46,7 @@ class ContactDetailsVC: UIViewController {
 
         style()
         layout()
+        setup()
     }
     
     @objc func buttonPressed(sender: UIButton!) {
@@ -70,6 +71,8 @@ class ContactDetailsVC: UIViewController {
                            lastName: secondName,
                            telephone: telefonView.textField.text,
                            email: emailView.textField.text)
+        
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -132,5 +135,22 @@ extension ContactDetailsVC {
             button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
             button.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    private func setup() {
+        self.firstNameView.textField.delegate = self
+        self.secondNameView.textField.delegate = self
+        self.telefonView.textField.delegate = self
+        self.emailView.textField.delegate = self
+    }
+}
+
+// MARK: - UITextFieldDelegate extension
+
+extension ContactDetailsVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

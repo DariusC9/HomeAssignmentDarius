@@ -53,6 +53,28 @@ class CoreDataManager {
         return contactModels
     }
     
+    func updateContact(with model: ContactModel) {
+        let contact = fetchContactById(model.id)
+        contact?.name = model.name
+        contact?.phone = model.phone
+        contact?.email = model.email
+        save()
+    }
+    
+    private func fetchContactById(_ id: Int) -> Contact? {
+        let fetchRequest: NSFetchRequest<Contact> = Contact.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %d", id)
+
+        do {
+            let contacts = try mainContext.fetch(fetchRequest)
+            return contacts.first
+        } catch {
+            print("Error fetching contact: \(error.localizedDescription)")
+            return nil
+        }
+    }
+
+    
     private func fetchContacts() -> [Contact] {
         let fetchRequest: NSFetchRequest<Contact> = Contact.fetchRequest()
 

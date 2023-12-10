@@ -16,13 +16,13 @@ enum ContactImage {
 /// represents a local model for the core data entity 'Contact'
 struct ContactModel {
     let id: Int
-    let name: String
-    let email: String
+    var name: String
+    var email: String?
     let gender: String
     let status: ContactStatus
     let image: ContactImage
     let profileImageData: Data?
-    let phone: String?
+    var phone: String?
     
     init(contactData: ContactData) {
         self.id = contactData.id
@@ -63,5 +63,11 @@ struct ContactModel {
         self.image = image
         self.profileImageData = profileImageData
         self.phone = phone
+    }
+    
+    mutating func updateContactModel(name: String, phone: String?, email: String?) {
+        self.name = name
+        self.phone = phone
+        self.email = email
     }
 }
