@@ -12,7 +12,15 @@ class ContactCell: UITableViewCell {
     static let identifier = "ContactCell"
     
     let profileImage = UIImageView()
+    let initialsLogo = InitialsView()
     let contactNameLabel = UILabel()
+    
+    var viewModel: ContactCellViewModel? {
+        didSet {
+            contactNameLabel.text = viewModel?.setContactNameLabelText()
+            setViewForLogo()
+        }
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -40,12 +48,7 @@ class ContactCell: UITableViewCell {
         chevronImageView.tintColor = UIColor.componentsColor
         self.accessoryView = chevronImageView
         
-        /// profileImage
-        let image = UIImage(named: "profileImage")
-        profileImage.image = image
-        
         /// contactNameLAbel
-        contactNameLabel.text = "Nume Frumos"
         contactNameLabel.textColor = UIColor.black
         contactNameLabel.font = UIFont.contactCellFont
     }
@@ -53,11 +56,13 @@ class ContactCell: UITableViewCell {
     private func layout() {
         /// add subviews
         contentView.addSubview(profileImage)
+        contentView.addSubview(initialsLogo)
         contentView.addSubview(contactNameLabel)
         
         /// translatesAutoresizingMaskIntoConstraints
         profileImage.translatesAutoresizingMaskIntoConstraints = false
         contactNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        initialsLogo.translatesAutoresizingMaskIntoConstraints = false
         
         /// constraints
         /// profileImage
@@ -67,10 +72,40 @@ class ContactCell: UITableViewCell {
             profileImage.widthAnchor.constraint(equalToConstant: 50),
             profileImage.heightAnchor.constraint(equalToConstant: 50)
         ])
+        /// initialLogo
+        NSLayoutConstraint.activate([
+            initialsLogo.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            initialsLogo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            initialsLogo.widthAnchor.constraint(equalToConstant: 50),
+            initialsLogo.heightAnchor.constraint(equalToConstant: 50)
+        ])
         /// contactNameLabel
         NSLayoutConstraint.activate([
             contactNameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             contactNameLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 18)
         ])
+    }
+    
+    private func setViewForLogo() {
+        
+        profileImage.isHidden = true
+        initialsLogo.isHidden = true
+        
+        let showPicture = viewModel?.showProfileImage()
+        
+        switch showPicture {
+            case true:
+            let image = viewModel?.setProfileImage()
+            profileImage.image = image
+            profileImage.isHidden = false
+            case false:
+            initialsLogo.initialsLabel.text = viewModel?.setInitialsText()
+            initialsLogo.isHidden = false
+            case .none, .some:
+            profileImage.image = UIImage(named: "profileImage")
+            profileImage.isHidden = false
+        }
+        setNeedsLayout()
+        layoutIfNeeded()
     }
 }

@@ -112,6 +112,8 @@ extension ContactsVC: UITableViewDataSource {
             cell.contentConfiguration = content
             return cell
         }
+        
+        cell.viewModel = ContactCellViewModel(contactModel: viewModel.contacts[indexPath.row])
 
         return cell
     }
