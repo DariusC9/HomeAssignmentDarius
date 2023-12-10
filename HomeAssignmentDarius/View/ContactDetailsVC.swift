@@ -12,6 +12,8 @@ protocol ContactDetailsVMProtocol {
     var contact: ContactModel { get }
     
     func createTitle() -> String
+    
+    func saveItem(firstName: String, lastName: String, telephone: String?, email: String?)
 }
 
 /// view controller used to display the details of a contact or to add a new contact
@@ -47,7 +49,27 @@ class ContactDetailsVC: UIViewController {
     }
     
     @objc func buttonPressed(sender: UIButton!) {
-      print("Button pressed")
+        
+        guard let firstName = firstNameView.textField.text, !firstName.isEmpty else {
+            let alert = UIAlertController(title: "Empty name", message: "The first name cannot be empty", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel)
+            alert.addAction(okAction)
+            self.present(alert, animated: true)
+            return
+        }
+        
+        guard let secondName = secondNameView.textField.text, !secondName.isEmpty else {
+            let alert = UIAlertController(title: "Empty name", message: "The second name cannot be empty", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel)
+            alert.addAction(okAction)
+            self.present(alert, animated: true)
+            return
+        }
+        
+        viewModel.saveItem(firstName: firstName,
+                           lastName: secondName,
+                           telephone: telefonView.textField.text,
+                           email: emailView.textField.text)
     }
 }
 

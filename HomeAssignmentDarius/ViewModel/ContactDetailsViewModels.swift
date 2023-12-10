@@ -19,8 +19,11 @@ class ContactDetailsShowViewModel: ContactDetailsVMProtocol {
         return "Modifică contact"
     }
     
-    
+    func saveItem(firstName: String, lastName: String, telephone: String?, email: String?) {
+        print("")
+    }
 }
+
 /// view model used to add a new contact in ContactDetailsVC
 class ContactDetailsAddViewModel: ContactDetailsVMProtocol {
     var contact: ContactModel
@@ -33,5 +36,7 @@ class ContactDetailsAddViewModel: ContactDetailsVMProtocol {
         return "Adaugă contact"
     }
     
-    
+    func saveItem(firstName: String, lastName: String, telephone: String?, email: String?) {
+        print("")
+    }
 }
