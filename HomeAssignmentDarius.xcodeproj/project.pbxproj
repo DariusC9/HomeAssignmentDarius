@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		809F34672B26F16C00AEDEC1 /* UserDefaults extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F34662B26F16C00AEDEC1 /* UserDefaults extensions.swift */; };
+		809F34692B26F22D00AEDEC1 /* DateCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F34682B26F22D00AEDEC1 /* DateCreator.swift */; };
 		80A34D5B2B259F52004DBB99 /* InitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A34D5A2B259F52004DBB99 /* InitialsView.swift */; };
 		80A34D5D2B25B0B4004DBB99 /* String extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A34D5C2B25B0B4004DBB99 /* String extensions.swift */; };
 		80A34D602B261D13004DBB99 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A34D5F2B261D13004DBB99 /* Generator.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		809F34662B26F16C00AEDEC1 /* UserDefaults extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults extensions.swift"; sourceTree = "<group>"; };
+		809F34682B26F22D00AEDEC1 /* DateCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCreator.swift; sourceTree = "<group>"; };
 		80A34D5A2B259F52004DBB99 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		80A34D5C2B25B0B4004DBB99 /* String extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String extensions.swift"; sourceTree = "<group>"; };
 		80A34D5F2B261D13004DBB99 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				80A34D5F2B261D13004DBB99 /* Generator.swift */,
+				809F34682B26F22D00AEDEC1 /* DateCreator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				80F451EF2B23703A0005FFF4 /* UIColor extensions.swift */,
 				80F451F12B2379820005FFF4 /* UIFont extensions.swift */,
 				80A34D5C2B25B0B4004DBB99 /* String extensions.swift */,
+				809F34662B26F16C00AEDEC1 /* UserDefaults extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -334,10 +340,12 @@
 				80C4C0632B220DD2006CE060 /* ContactModel.swift in Sources */,
 				80C8FEBB2B24AEE100F84B9F /* ContactDetailsViewModels.swift in Sources */,
 				80C8FEB72B246AE600F84B9F /* ContactDetailsVC.swift in Sources */,
+				809F34672B26F16C00AEDEC1 /* UserDefaults extensions.swift in Sources */,
 				80C8FEB52B245D8D00F84B9F /* ContactsViewModel.swift in Sources */,
 				80F451F02B23703A0005FFF4 /* UIColor extensions.swift in Sources */,
 				80C8FEB12B244A7500F84B9F /* ContactCell.swift in Sources */,
 				80C4C0262B21ABB9006CE060 /* HomeAssignmentDarius.xcdatamodeld in Sources */,
+				809F34692B26F22D00AEDEC1 /* DateCreator.swift in Sources */,
 				80C4C05B2B21E62A006CE060 /* NetworkManager.swift in Sources */,
 				80C4C01C2B21ABB9006CE060 /* AppDelegate.swift in Sources */,
 				80C4C05E2B21E78D006CE060 /* PagoNetworking.swift in Sources */,

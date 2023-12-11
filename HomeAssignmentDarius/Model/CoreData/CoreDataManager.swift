@@ -67,6 +67,19 @@ class CoreDataManager {
         save()
     }
     
+    func deleteAllContacts() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Contact")
+
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try persistentContainer.viewContext.execute(batchDeleteRequest)
+            save()
+        } catch {
+            print("Error deleting contacts")
+        }
+    }
+    
     private func fetchContactById(_ id: Int) -> Contact? {
         let fetchRequest: NSFetchRequest<Contact> = Contact.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %d", id)
@@ -75,12 +88,11 @@ class CoreDataManager {
             let contacts = try mainContext.fetch(fetchRequest)
             return contacts.first
         } catch {
-            print("Error fetching contact: \(error.localizedDescription)")
+            print("Error fetching contact")
             return nil
         }
     }
 
-    
     private func fetchContacts() -> [Contact] {
         let fetchRequest: NSFetchRequest<Contact> = Contact.fetchRequest()
 
@@ -88,7 +100,7 @@ class CoreDataManager {
             let contacts = try mainContext.fetch(fetchRequest)
             return contacts
         } catch {
-            print("Error fetching contacts: \(error.localizedDescription)")
+            print("Error fetching contacts")
             return []
         }
     }

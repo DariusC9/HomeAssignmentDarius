@@ -20,7 +20,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
         
-        cacheFilteredData { viewModel in
+        let cacheDate = UserDefaults.standard.cacheDate
+        let currentDate = Date()
+        
+        if cacheDate <= currentDate {
+            let nextCacheDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
+            guard let nextCacheDate else { return }
+            UserDefaults.standard.cacheDate = nextCacheDate
+            // To make the cache system temporary, but will also delete added contacts manually
+            CoreDataManager.shared.deleteAllContacts()
+            cacheFilteredData { viewModel in
+                let mainvc = self.setupMainViewController(with: viewModel)
+                navigationController.pushViewController(mainvc, animated: true)
+            }
+        } else {
+            let viewModel =  ContactsViewModel(contacts: CoreDataManager.shared.fetchContactModels())
             let mainvc = self.setupMainViewController(with: viewModel)
             navigationController.pushViewController(mainvc, animated: true)
         }

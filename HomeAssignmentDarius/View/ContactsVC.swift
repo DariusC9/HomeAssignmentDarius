@@ -51,8 +51,6 @@ extension ContactsVC {
         self.navigationItem.rightBarButtonItem = addButton
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title: "", style: .plain, target: nil, action: nil)
-
-
         
         /// subtitleLabel
         subtitleLabel.text = "CONTACTELE MELE"
@@ -65,6 +63,8 @@ extension ContactsVC {
         tableView.rowHeight = 100
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.cellLayoutMarginsFollowReadableWidth = false
     }
     
     private func layout() {
@@ -115,6 +115,10 @@ extension ContactsVC: UITableViewDataSource {
         }
         
         cell.viewModel = ContactCellViewModel(contactModel: viewModel.contacts[indexPath.row])
+        
+        cell.preservesSuperviewLayoutMargins = false
+        cell.layoutMargins = UIEdgeInsets.zero
+        cell.separatorInset = UIEdgeInsets.zero
 
         return cell
     }
