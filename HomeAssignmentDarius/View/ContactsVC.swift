@@ -94,11 +94,7 @@ extension ContactsVC {
 
 //MARK: - UITableViewDelegate and UITableViewDataSource extensions
 
-extension ContactsVC: UITableViewDelegate {
-    
-}
-
-extension ContactsVC: UITableViewDataSource {
+extension ContactsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(viewModel.contacts.count)

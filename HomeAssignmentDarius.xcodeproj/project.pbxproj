@@ -48,13 +48,6 @@
 			remoteGlobalIDString = 80C4C0172B21ABB9006CE060;
 			remoteInfo = HomeAssignmentDarius;
 		};
-		80A34D692B2634E9004DBB99 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80C4C0102B21ABB9006CE060 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 80C4C0172B21ABB9006CE060;
-			remoteInfo = HomeAssignmentDarius;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +60,6 @@
 		80A34D5A2B259F52004DBB99 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		80A34D5C2B25B0B4004DBB99 /* String extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String extensions.swift"; sourceTree = "<group>"; };
 		80A34D5F2B261D13004DBB99 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
-		80A34D652B2634E9004DBB99 /* HomeAssignmentDariusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeAssignmentDariusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C4C0182B21ABB9006CE060 /* HomeAssignmentDarius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAssignmentDarius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C4C01B2B21ABB9006CE060 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80C4C01D2B21ABB9006CE060 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,13 +89,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		809F34762B270D4000AEDEC1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		80A34D622B2634E9004DBB99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -152,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				80C4C0182B21ABB9006CE060 /* HomeAssignmentDarius.app */,
-				80A34D652B2634E9004DBB99 /* HomeAssignmentDariusTests.xctest */,
 				809F34792B270D4000AEDEC1 /* HomeAssignmentDariusTest.xctest */,
 			);
 			name = Products;
@@ -262,24 +246,6 @@
 			productReference = 809F34792B270D4000AEDEC1 /* HomeAssignmentDariusTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		80A34D642B2634E9004DBB99 /* HomeAssignmentDariusTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 80A34D6D2B2634E9004DBB99 /* Build configuration list for PBXNativeTarget "HomeAssignmentDariusTests" */;
-			buildPhases = (
-				80A34D612B2634E9004DBB99 /* Sources */,
-				80A34D622B2634E9004DBB99 /* Frameworks */,
-				80A34D632B2634E9004DBB99 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				80A34D6A2B2634E9004DBB99 /* PBXTargetDependency */,
-			);
-			name = HomeAssignmentDariusTests;
-			productName = HomeAssignmentDariusTests;
-			productReference = 80A34D652B2634E9004DBB99 /* HomeAssignmentDariusTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		80C4C0172B21ABB9006CE060 /* HomeAssignmentDarius */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80C4C02F2B21ABBA006CE060 /* Build configuration list for PBXNativeTarget "HomeAssignmentDarius" */;
@@ -311,11 +277,6 @@
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = 80C4C0172B21ABB9006CE060;
 					};
-					80A34D642B2634E9004DBB99 = {
-						CreatedOnToolsVersion = 14.3.1;
-						LastSwiftMigration = 1430;
-						TestTargetID = 80C4C0172B21ABB9006CE060;
-					};
 					80C4C0172B21ABB9006CE060 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -335,7 +296,6 @@
 			projectRoot = "";
 			targets = (
 				80C4C0172B21ABB9006CE060 /* HomeAssignmentDarius */,
-				80A34D642B2634E9004DBB99 /* HomeAssignmentDariusTests */,
 				809F34782B270D4000AEDEC1 /* HomeAssignmentDariusTest */,
 			);
 		};
@@ -343,13 +303,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		809F34772B270D4000AEDEC1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		80A34D632B2634E9004DBB99 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -375,13 +328,6 @@
 				809F34852B270ED300AEDEC1 /* DateCreatorTest.swift in Sources */,
 				809F34832B270D5300AEDEC1 /* ContactDataFilterTest.swift in Sources */,
 				809F34872B27102E00AEDEC1 /* StringExtensionTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		80A34D612B2634E9004DBB99 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,11 +371,6 @@
 			isa = PBXTargetDependency;
 			target = 80C4C0172B21ABB9006CE060 /* HomeAssignmentDarius */;
 			targetProxy = 809F347D2B270D4000AEDEC1 /* PBXContainerItemProxy */;
-		};
-		80A34D6A2B2634E9004DBB99 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 80C4C0172B21ABB9006CE060 /* HomeAssignmentDarius */;
-			targetProxy = 80A34D692B2634E9004DBB99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -475,47 +416,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coutidarius.HomeAssignmentDariusTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeAssignmentDarius.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HomeAssignmentDarius";
-			};
-			name = Release;
-		};
-		80A34D6B2B2634E9004DBB99 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 472JJKMC74;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.coutidarius.HomeAssignmentDariusTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "HomeAssignmentDariusTests/HomeAssignmentDariusTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeAssignmentDarius.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HomeAssignmentDarius";
-			};
-			name = Debug;
-		};
-		80A34D6C2B2634E9004DBB99 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 472JJKMC74;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.coutidarius.HomeAssignmentDariusTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "HomeAssignmentDariusTests/HomeAssignmentDariusTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeAssignmentDarius.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HomeAssignmentDarius";
@@ -698,15 +598,6 @@
 			buildConfigurations = (
 				809F34802B270D4000AEDEC1 /* Debug */,
 				809F34812B270D4000AEDEC1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		80A34D6D2B2634E9004DBB99 /* Build configuration list for PBXNativeTarget "HomeAssignmentDariusTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				80A34D6B2B2634E9004DBB99 /* Debug */,
-				80A34D6C2B2634E9004DBB99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
