@@ -29,6 +29,16 @@ class ContactsVC: UIViewController {
         layout()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if viewModel.hasError {
+            let alert = UIAlertController(title: "Error", message: "An error has occured. Please try again later.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .cancel)
+            alert.addAction(okAction)
+            self.present(alert, animated: true)
+        }
+    }
+    
     @objc func navigationButtonPressed() {
         let destinationVC = viewModel.createDestinationVC(using: nil)
         destinationVC.delegate = self

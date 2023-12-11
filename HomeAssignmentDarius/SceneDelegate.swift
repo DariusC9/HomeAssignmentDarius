@@ -52,7 +52,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 completion(viewModel)
             } catch {
                 print("Error during data fetching: \(error.localizedDescription)")
-                let viewModel = ContactsViewModel(contacts: [])
+                let viewModel = ContactsViewModel(contacts: [], hasError: true)
                 completion(viewModel)
             }
         }

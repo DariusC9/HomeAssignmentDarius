@@ -12,9 +12,11 @@ class ContactsViewModel {
     private(set) var contacts: [ContactModel]
     private var data: Data? = nil
     private var image: ContactImage = .initials
+    let hasError: Bool
     
-    init(contacts: [ContactModel]) {
+    init(contacts: [ContactModel], hasError: Bool = false) {
         self.contacts = contacts
+        self.hasError = hasError
     }
     
     func createDestinationVC(using index: Int?) -> ContactDetailsVC {
