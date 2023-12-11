@@ -6,7 +6,8 @@
 //
 
 import UIKit
-/// cell used to display contacts in table view
+
+/// Cell used to display contacts in table view
 class ContactCell: UITableViewCell {
     
     static let identifier = "ContactCell"
@@ -40,7 +41,7 @@ class ContactCell: UITableViewCell {
     }
     
     private func styleCell() {
-        ///cell
+        // cell
         self.backgroundColor = UIColor.clear
         self.selectionStyle = .none
         let chevronImage = UIImage(systemName: "chevron.right")
@@ -48,38 +49,38 @@ class ContactCell: UITableViewCell {
         chevronImageView.tintColor = UIColor.componentsColor
         self.accessoryView = chevronImageView
         
-        /// contactNameLAbel
+        // contactNameLAbel
         contactNameLabel.textColor = UIColor.black
         contactNameLabel.font = UIFont.contactCellFont
     }
     
     private func layout() {
-        /// add subviews
+        // add subviews
         contentView.addSubview(profileImage)
         contentView.addSubview(initialsLogo)
         contentView.addSubview(contactNameLabel)
         
-        /// translatesAutoresizingMaskIntoConstraints
+        // translatesAutoresizingMaskIntoConstraints
         profileImage.translatesAutoresizingMaskIntoConstraints = false
         contactNameLabel.translatesAutoresizingMaskIntoConstraints = false
         initialsLogo.translatesAutoresizingMaskIntoConstraints = false
         
-        /// constraints
-        /// profileImage
+        // constraints
+        // profileImage
         NSLayoutConstraint.activate([
             profileImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             profileImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             profileImage.widthAnchor.constraint(equalToConstant: 50),
             profileImage.heightAnchor.constraint(equalToConstant: 50)
         ])
-        /// initialLogo
+        // initialLogo
         NSLayoutConstraint.activate([
             initialsLogo.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             initialsLogo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             initialsLogo.widthAnchor.constraint(equalToConstant: 50),
             initialsLogo.heightAnchor.constraint(equalToConstant: 50)
         ])
-        /// contactNameLabel
+        // contactNameLabel
         NSLayoutConstraint.activate([
             contactNameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             contactNameLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 18)

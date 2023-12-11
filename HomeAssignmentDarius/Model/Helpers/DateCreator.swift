@@ -7,8 +7,8 @@
 
 import Foundation
 
+/// Object used to generate old date for cache mechanism
 struct DateCreator {
-    
     static func createOldDate() -> Date {
         let dateString = "2009-01-01"
         let dateFormatter = DateFormatter()

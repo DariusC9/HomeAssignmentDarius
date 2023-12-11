@@ -7,9 +7,8 @@
 
 import UIKit
 
-/// the view model of the contactsVC
+/// The view model of the contactsVC
 class ContactsViewModel {
-    
     private(set) var contacts: [ContactModel]
     private var data: Data? = nil
     private var image: ContactImage = .initials
@@ -19,7 +18,6 @@ class ContactsViewModel {
     }
     
     func createDestinationVC(using index: Int?) -> ContactDetailsVC {
-        
         if index == nil {
             let id = Generator.generateRandomNumber()
             if id % 2 != 0 {

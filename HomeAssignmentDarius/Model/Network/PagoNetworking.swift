@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// class that implement the NetworkService protocol for Pago service
+/// Class that implement the NetworkService protocol for Pago service
 class PagoNetworkService: NetworkService {
     var url: URL = URL(string: "https://gorest.co.in/public/v2/users") ?? URL(fileURLWithPath: "https://gorest.co.in/public/v2/users")
     
@@ -17,7 +17,7 @@ class PagoNetworkService: NetworkService {
     }
 }
 
-/// class that implement the ApiHandler protocol for Pago service
+/// Class that implement the ApiHandler protocol for Pago service
 class PagoApiHandler<T: Codable>: ApiHandler {
     var decoder: JSONDecoder
     

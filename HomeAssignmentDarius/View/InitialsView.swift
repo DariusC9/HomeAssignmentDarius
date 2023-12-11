@@ -33,9 +33,9 @@ class InitialsView: UIView {
     }
     
     private func style() {
-        ///view
+        // view
         self.backgroundColor = UIColor.labelColor
-        /// initialsLabel
+        // initialsLabel
         initialsLabel.text = "DC"
         initialsLabel.textColor = UIColor.white
         initialsLabel.textAlignment = .center
@@ -43,14 +43,14 @@ class InitialsView: UIView {
     }
     
     private func layout() {
-        /// add subviews
+        // add subviews
         self.addSubview(initialsLabel)
         
-        /// translatesAutoresizingMaskIntoConstraints
+        // translatesAutoresizingMaskIntoConstraints
         initialsLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        /// constraints
-        /// initialsLabel
+        // constraints
+        // initialsLabel
         NSLayoutConstraint.activate([
             initialsLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             initialsLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)

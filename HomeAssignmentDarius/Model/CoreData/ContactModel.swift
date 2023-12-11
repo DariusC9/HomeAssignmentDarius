@@ -7,13 +7,13 @@
 
 import Foundation
 
-/// enum that represents the type of pictures of a contact model
+/// Enum that represents the type of pictures of a contact model
 enum ContactImage {
     case initials
     case picture
 }
 
-/// represents a local model for the core data entity 'Contact'
+/// Represents a local model for the core data entity 'Contact'
 struct ContactModel {
     let id: Int
     var name: String

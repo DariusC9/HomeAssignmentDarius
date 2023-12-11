@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// View used in ContactDetailsVC
 class ContactDetailsView: UIView {
     
     let backgroundView = UIView()
@@ -42,59 +43,59 @@ class ContactDetailsView: UIView {
     }
 
     private func style() {
-        /// view
+        // view
         self.backgroundColor = UIColor.backgroundColor
         
-        /// backgroundView
+        // backgroundView
         backgroundView.backgroundColor = UIColor.white
         
-        /// titleLabel
+        // titleLabel
         titleLabel.text = "NUME"
         titleLabel.font = UIFont.labelFont
         titleLabel.textColor = UIColor.labelColor
         
-        /// textField
+        // textField
         textField.borderStyle = UITextField.BorderStyle.none
         textField.text = "Nume Frumos"
         textField.backgroundColor = UIColor.white
         textField.textColor = UIColor.black
         
-        /// line
+        // line
         line.backgroundColor = UIColor.backgroundColor
     }
     
     private func layout() {
-        /// add subviews
+        // add subviews
         self.addSubview(backgroundView)
         self.addSubview(titleLabel)
         self.addSubview(textField)
         self.addSubview(line)
         
-        /// translatesAutoresizingMaskIntoConstraints
+        // translatesAutoresizingMaskIntoConstraints
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         textField.translatesAutoresizingMaskIntoConstraints = false
         line.translatesAutoresizingMaskIntoConstraints = false
         
-        /// constraints
-        /// backgroundView
+        // constraints
+        // backgroundView
         NSLayoutConstraint.activate([
             backgroundView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
             backgroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             backgroundView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8)
         ])
-        /// titleLabel
+        // titleLabel
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
         ])
-        /// textField
+        // textField
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 32),
             textField.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
         ])
-        /// line
+        // line
         NSLayoutConstraint.activate([
             line.topAnchor.constraint(equalTo: textField.bottomAnchor),
             line.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),

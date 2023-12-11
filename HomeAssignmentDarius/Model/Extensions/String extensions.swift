@@ -8,7 +8,6 @@
 import Foundation
 
 extension String {
-    
     func getInitials() -> String {
         let components = self.components(separatedBy: " ")
         let initialsCaracters = components.compactMap { $0.first }

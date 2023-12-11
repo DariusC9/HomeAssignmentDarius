@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 class CoreDataManager {
-    /// create it as a singleton
+    // Created it as a singleton
     static let shared = CoreDataManager()
     private init() {}
 

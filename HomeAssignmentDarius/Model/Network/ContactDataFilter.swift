@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// object to filter ContactData based on the status
+/// Object to filter ContactData based on the status
 struct ContactDataFilter {
     
     static func filter(unfilteredData: [ContactData]) -> [ContactData] {

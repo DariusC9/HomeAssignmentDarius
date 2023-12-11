@@ -7,8 +7,8 @@
 
 import Foundation
 
+/// Object used to generate a random id
 struct Generator {
-    
     static func generateRandomNumber() -> Int {
         let lowerBound = 1000000
         let upperBound = 9999999

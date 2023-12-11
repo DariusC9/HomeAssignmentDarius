@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// the view model for the cell
+/// The view model for the cell
 class ContactCellViewModel {
     private let contactModel: ContactModel
     

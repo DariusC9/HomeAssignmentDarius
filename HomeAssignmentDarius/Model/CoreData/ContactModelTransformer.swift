@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-/// object used to transform contact model into 'Contact' entity and viceversa
+/// Object used to transform contact model into 'Contact' entity and viceversa
 struct ContactModelTransformer {
     
     func transformModelIntoEntity(contactModel: ContactModel) -> Contact {
@@ -29,7 +29,6 @@ struct ContactModelTransformer {
     }
     
     func transformEntityIntoModel(contactEntity: Contact) -> ContactModel {
-        
         guard let name = contactEntity.name else {
             return ContactModel(id: 0, name: "Error", email: "", gender: "", status: .active, image: .initials, profileImageData: nil, phone: "")
         }

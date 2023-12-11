@@ -7,13 +7,13 @@
 
 import Foundation
 
-/// enum representing the status of a contact
+/// Enum representing the status of a contact
 enum ContactStatus: String, Codable {
     case active
     case inactive
 }
 
-/// model used in decoding the JSON file
+/// Model used in decoding the JSON file
 struct ContactData: Codable {
     let id: Int
     let name: String

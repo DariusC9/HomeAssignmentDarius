@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// view model used to show details of a contact in ContactDetailsVC
+/// The view model used to show details of a contact in ContactDetailsVC
 class ContactDetailsShowViewModel: ContactDetailsVMProtocol {
     var contact: ContactModel
     

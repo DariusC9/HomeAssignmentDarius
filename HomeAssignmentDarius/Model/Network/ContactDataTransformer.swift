@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// object used to transform contact data into contact model
+/// Object used to transform contact data into contact model
 struct ContactDataTransformer {
     let data: [ContactData]
 

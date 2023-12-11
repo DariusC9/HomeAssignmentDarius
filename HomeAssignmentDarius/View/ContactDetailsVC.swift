@@ -7,22 +7,20 @@
 
 import UIKit
 
+/// Protocol used for contact details view models
 protocol ContactDetailsVMProtocol {
-    
     var contact: ContactModel { get }
     
     func createTitle() -> String
-    
     func saveItem(firstName: String, lastName: String, telephone: String?, email: String?)
-    
     func setButtonTitle() -> String
 }
-
+/// Protocol needed for updating the Contacts view controller
 protocol ContactDetailsDelegate: AnyObject {
     func update()
 }
 
-/// view controller used to display the details of a contact or to add a new contact
+/// View controller used to display the details of a contact or to add a new contact
 class ContactDetailsVC: UIViewController {
     
     let detailsStackView = UIStackView()
@@ -57,7 +55,6 @@ class ContactDetailsVC: UIViewController {
     }
     
     @objc func buttonPressed(sender: UIButton!) {
-        
         guard let firstName = firstNameView.textField.text, !firstName.isEmpty else {
             let alert = UIAlertController(title: "Empty name", message: "The first name cannot be empty", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .cancel)
@@ -88,16 +85,16 @@ class ContactDetailsVC: UIViewController {
 extension ContactDetailsVC {
     
     private func style() {
-        /// view controller
+        // view controller
         self.title = viewModel.createTitle()
         view.backgroundColor = UIColor.backgroundColor
         
-        /// collectionView
+        // collectionView
         detailsStackView.backgroundColor = UIColor.white
         detailsStackView.distribution = .fillEqually
         detailsStackView.axis = .vertical
         
-        /// button
+        // button
         button.setTitle(viewModel.setButtonTitle(), for: .normal)
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.backgroundColor = UIColor(red: 68/255, green: 200/255, blue: 77/255, alpha: 1.0)
@@ -109,7 +106,7 @@ extension ContactDetailsVC {
     }
     
     private func layout() {
-        /// add subviews
+        // add subviews
         view.addSubview(detailsStackView)
         detailsStackView.addArrangedSubview(firstNameView)
         detailsStackView.addArrangedSubview(secondNameView)
@@ -117,25 +114,25 @@ extension ContactDetailsVC {
         detailsStackView.addArrangedSubview(emailView)
         view.addSubview(button)
         
-        /// translatesAutoresizingMaskIntoConstraints
+        // translatesAutoresizingMaskIntoConstraints
         detailsStackView.translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        /// constraints
-        /// detailsStackView
+        // constraints
+        // detailsStackView
         NSLayoutConstraint.activate([
             detailsStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             detailsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             detailsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-        /// stack views
+        // stack views
         NSLayoutConstraint.activate([
             firstNameView.heightAnchor.constraint(equalToConstant: 110),
             secondNameView.heightAnchor.constraint(equalToConstant: 110),
             telefonView.heightAnchor.constraint(equalToConstant: 110),
             emailView.heightAnchor.constraint(equalToConstant: 110)
         ])
-        /// button
+        // button
         NSLayoutConstraint.activate([
             button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),

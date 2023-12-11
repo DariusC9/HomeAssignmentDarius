@@ -7,8 +7,8 @@
 
 import UIKit
 
+/// The main ViewController
 class ContactsVC: UIViewController {
-    
     let subtitleLabel = UILabel()
     let tableView = UITableView()
     
@@ -25,7 +25,6 @@ class ContactsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         style()
         layout()
     }
@@ -40,9 +39,8 @@ class ContactsVC: UIViewController {
 //MARK: - Setup view extension
 
 extension ContactsVC {
-    
     private func style() {
-        /// view controller
+        // view controller
         self.title = "Contacte"
         view.backgroundColor = UIColor.backgroundColor
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -52,12 +50,12 @@ extension ContactsVC {
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title: "", style: .plain, target: nil, action: nil)
         
-        /// subtitleLabel
+        // subtitleLabel
         subtitleLabel.text = "CONTACTELE MELE"
         subtitleLabel.textColor = UIColor.labelColor
         subtitleLabel.font = UIFont.labelFont
         
-        /// tableView
+        // tableView
         tableView.backgroundColor = UIColor.white
         tableView.register(ContactCell.self, forCellReuseIdentifier: ContactCell.identifier)
         tableView.rowHeight = 100
@@ -68,21 +66,21 @@ extension ContactsVC {
     }
     
     private func layout() {
-        /// add subviews
+        // add subviews
         view.addSubview(subtitleLabel)
         view.addSubview(tableView)
         
-        /// translatesAutoresizingMaskIntoConstraints
+        // translatesAutoresizingMaskIntoConstraints
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        /// constraints
-        /// label
+        // constraints
+        // label
         NSLayoutConstraint.activate([
             subtitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
             subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 19)
         ])
-        /// tableView
+        // tableView
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 12),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

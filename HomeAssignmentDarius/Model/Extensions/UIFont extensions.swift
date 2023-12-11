@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIFont {
-    
     static var labelFont: UIFont {
         return UIFont(name: "HelveticaNeue-Medium", size: 15) ?? UIFont.systemFont(ofSize: 15)
     }
@@ -16,5 +15,4 @@ extension UIFont {
     static var contactCellFont: UIFont {
         return UIFont.systemFont(ofSize: 19)
     }
-    
 }

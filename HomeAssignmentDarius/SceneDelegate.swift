@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let cacheDate = UserDefaults.standard.cacheDate
         let currentDate = Date()
-        
+        // Check if network call is needed
         if cacheDate <= currentDate {
             let nextCacheDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
             guard let nextCacheDate else { return }
@@ -40,7 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    /// method used to cache filtered data
+    // Method used to cache filtered data
     private func cacheFilteredData(completion: @escaping (ContactsViewModel) -> Void) {
         Task {
             do {
@@ -57,7 +57,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }
     }
-    /// function used to fetch unfiltered data
+    // Function used to fetch unfiltered data
     private func fetchData() async throws -> [ContactData] {
         let networkService = PagoNetworkService()
         let apiHandler = PagoApiHandler<ContactData>(decoder: JSONDecoder())
@@ -67,22 +67,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return contactData
         
     }
-    /// function used to filter data
+    // Function used to filter data
     private func filterData(unfilteredData: [ContactData]) -> [ContactData] {
         let filteredData = ContactDataFilter.filter(unfilteredData: unfilteredData)
         return filteredData
     }
-    /// function used to transform contact data into contact model
+    // Function used to transform contact data into contact model
     private func transformToContactModelAsync(contactData: [ContactData]) async -> [ContactModel] {
         let contactDataTransformer = ContactDataTransformer(data: contactData)
         return await contactDataTransformer.transformAsync()
     }
-    /// function used to transform and save contact model into core data entity 'Contact'
+    // Function used to transform and save contact model into core data entity 'Contact'
     private func saveContactModelIntoCoreData(contactModel: [ContactModel]) {
         CoreDataManager.shared.saveContactModelsIntoCoreData(contactModels: contactModel)
     }
     
-    /// function used to setup navigation controller 
+    // Function used to setup navigation controller
     private func setupNavigationController() -> UINavigationController {
         let nav = UINavigationController()
         nav.navigationBar.prefersLargeTitles = true
@@ -99,7 +99,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         return nav
     }
-    /// function used to setup main view controller
+    // Function used to setup main view controller
     private func setupMainViewController(with viewModel: ContactsViewModel) -> ContactsVC {
         let mainVC = ContactsVC(viewModel: viewModel)
         return mainVC

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// NetworkError enum for better validation
 enum NetworkError: Error {
     case invalidURL
     case requestFailed(Error)
