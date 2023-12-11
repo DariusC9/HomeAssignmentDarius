@@ -69,8 +69,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     /// function used to filter data
     private func filterData(unfilteredData: [ContactData]) -> [ContactData] {
-        let contactFilter = ContactDataFilter(unfilteredData: unfilteredData)
-        let filteredData = contactFilter.filter()
+        let filteredData = ContactDataFilter.filter(unfilteredData: unfilteredData)
         return filteredData
     }
     /// function used to transform contact data into contact model

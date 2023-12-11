@@ -9,9 +9,8 @@ import Foundation
 
 /// object to filter ContactData based on the status
 struct ContactDataFilter {
-    let unfilteredData: [ContactData]
     
-    func filter() -> [ContactData] {
+    static func filter(unfilteredData: [ContactData]) -> [ContactData] {
         let filteredData = unfilteredData.filter { $0.status == .active }
         return filteredData
     }

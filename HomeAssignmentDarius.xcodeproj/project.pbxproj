@@ -12,7 +12,6 @@
 		80A34D5B2B259F52004DBB99 /* InitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A34D5A2B259F52004DBB99 /* InitialsView.swift */; };
 		80A34D5D2B25B0B4004DBB99 /* String extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A34D5C2B25B0B4004DBB99 /* String extensions.swift */; };
 		80A34D602B261D13004DBB99 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A34D5F2B261D13004DBB99 /* Generator.swift */; };
-		80A34D682B2634E9004DBB99 /* HomeAssignmentDariusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A34D672B2634E9004DBB99 /* HomeAssignmentDariusTests.swift */; };
 		80C4C01C2B21ABB9006CE060 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C01B2B21ABB9006CE060 /* AppDelegate.swift */; };
 		80C4C01E2B21ABB9006CE060 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C01D2B21ABB9006CE060 /* SceneDelegate.swift */; };
 		80C4C0202B21ABB9006CE060 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C01F2B21ABB9006CE060 /* ContactsVC.swift */; };
@@ -55,7 +54,6 @@
 		80A34D5C2B25B0B4004DBB99 /* String extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String extensions.swift"; sourceTree = "<group>"; };
 		80A34D5F2B261D13004DBB99 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		80A34D652B2634E9004DBB99 /* HomeAssignmentDariusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeAssignmentDariusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		80A34D672B2634E9004DBB99 /* HomeAssignmentDariusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssignmentDariusTests.swift; sourceTree = "<group>"; };
 		80C4C0182B21ABB9006CE060 /* HomeAssignmentDarius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeAssignmentDarius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C4C01B2B21ABB9006CE060 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80C4C01D2B21ABB9006CE060 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 		80A34D662B2634E9004DBB99 /* HomeAssignmentDariusTests */ = {
 			isa = PBXGroup;
 			children = (
-				80A34D672B2634E9004DBB99 /* HomeAssignmentDariusTests.swift */,
 			);
 			path = HomeAssignmentDariusTests;
 			sourceTree = "<group>";
@@ -269,6 +266,7 @@
 				TargetAttributes = {
 					80A34D642B2634E9004DBB99 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 						TestTargetID = 80C4C0172B21ABB9006CE060;
 					};
 					80C4C0172B21ABB9006CE060 = {
@@ -319,7 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80A34D682B2634E9004DBB99 /* HomeAssignmentDariusTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 472JJKMC74;
@@ -390,6 +388,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coutidarius.HomeAssignmentDariusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeAssignmentDariusTests/HomeAssignmentDariusTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeAssignmentDarius.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HomeAssignmentDarius";
@@ -400,6 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 472JJKMC74;
@@ -408,6 +409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coutidarius.HomeAssignmentDariusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeAssignmentDariusTests/HomeAssignmentDariusTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeAssignmentDarius.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HomeAssignmentDarius";
