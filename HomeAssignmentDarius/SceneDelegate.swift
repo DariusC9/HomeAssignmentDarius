@@ -59,8 +59,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     // Function used to fetch unfiltered data
     private func fetchData() async throws -> [ContactData] {
-        let networkService = PagoNetworkService()
-        let apiHandler = PagoApiHandler<ContactData>(decoder: JSONDecoder())
+        let networkService = APINetworkService()
+        let apiHandler = SpecificApiHandler<ContactData>(decoder: JSONDecoder())
         let networkManager = NetworkManager<ContactData>(networkService: networkService, apiHandler: apiHandler)
         
         let contactData =  try await networkManager.fetchData()

@@ -71,6 +71,19 @@ class ContactDetailsVC: UIViewController {
             return
         }
         
+        if let telephone = telefonView.textField.text {
+            if telephone.isEmpty != true {
+                if telephone.checkFirstNumber() == false {
+                    let alert = UIAlertController(title: "Wrong number input", message: "The number should start with 0", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .cancel)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true)
+                    return
+                }
+            }
+        }
+        
+        
         viewModel.saveItem(firstName: firstName,
                            lastName: secondName,
                            telephone: telefonView.textField.text,

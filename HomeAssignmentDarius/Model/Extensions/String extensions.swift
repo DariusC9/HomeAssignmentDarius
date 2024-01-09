@@ -66,4 +66,10 @@ extension String {
         
         return formattedNumber
     }
+    
+    func checkFirstNumber() -> Bool {
+        let firstNumber = self.first
+        let bool = firstNumber == "0" ? true : false
+        return bool
+    }
 }

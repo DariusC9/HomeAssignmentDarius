@@ -94,6 +94,7 @@ class ContactDetailsView: UIView {
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 32),
             textField.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
+            textField.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor,constant: -16)
         ])
         // line
         NSLayoutConstraint.activate([

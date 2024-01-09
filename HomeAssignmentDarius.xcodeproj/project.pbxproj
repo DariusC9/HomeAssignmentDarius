@@ -22,7 +22,7 @@
 		80C4C0282B21ABBA006CE060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C4C0272B21ABBA006CE060 /* Assets.xcassets */; };
 		80C4C02B2B21ABBA006CE060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80C4C0292B21ABBA006CE060 /* LaunchScreen.storyboard */; };
 		80C4C05B2B21E62A006CE060 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C05A2B21E62A006CE060 /* NetworkManager.swift */; };
-		80C4C05E2B21E78D006CE060 /* PagoNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C05D2B21E78D006CE060 /* PagoNetworking.swift */; };
+		80C4C05E2B21E78D006CE060 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C05D2B21E78D006CE060 /* Networking.swift */; };
 		80C4C0602B21E94D006CE060 /* ContactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C05F2B21E94D006CE060 /* ContactData.swift */; };
 		80C4C0632B220DD2006CE060 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C0622B220DD2006CE060 /* ContactModel.swift */; };
 		80C4C0652B220EF4006CE060 /* ContactDataFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C4C0642B220EF4006CE060 /* ContactDataFilter.swift */; };
@@ -69,7 +69,7 @@
 		80C4C02A2B21ABBA006CE060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80C4C02C2B21ABBA006CE060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80C4C05A2B21E62A006CE060 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		80C4C05D2B21E78D006CE060 /* PagoNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagoNetworking.swift; sourceTree = "<group>"; };
+		80C4C05D2B21E78D006CE060 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		80C4C05F2B21E94D006CE060 /* ContactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactData.swift; sourceTree = "<group>"; };
 		80C4C0622B220DD2006CE060 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		80C4C0642B220EF4006CE060 /* ContactDataFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataFilter.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				80C4C05A2B21E62A006CE060 /* NetworkManager.swift */,
-				80C4C05D2B21E78D006CE060 /* PagoNetworking.swift */,
+				80C4C05D2B21E78D006CE060 /* Networking.swift */,
 				80F451E82B2316390005FFF4 /* ProfileImageNetworkService.swift */,
 				80C4C05F2B21E94D006CE060 /* ContactData.swift */,
 				80C4C0642B220EF4006CE060 /* ContactDataFilter.swift */,
@@ -356,7 +356,7 @@
 				809F34692B26F22D00AEDEC1 /* DateCreator.swift in Sources */,
 				80C4C05B2B21E62A006CE060 /* NetworkManager.swift in Sources */,
 				80C4C01C2B21ABB9006CE060 /* AppDelegate.swift in Sources */,
-				80C4C05E2B21E78D006CE060 /* PagoNetworking.swift in Sources */,
+				80C4C05E2B21E78D006CE060 /* Networking.swift in Sources */,
 				80C8FEB32B245B4500F84B9F /* ContactCellViewModel.swift in Sources */,
 				80F451EB2B234A450005FFF4 /* ContactModelTransformer.swift in Sources */,
 				80C4C01E2B21ABB9006CE060 /* SceneDelegate.swift in Sources */,
@@ -550,6 +550,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,6 +578,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
